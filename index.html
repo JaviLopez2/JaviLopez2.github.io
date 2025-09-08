@@ -11,35 +11,52 @@
 <body class="is-preload">
 
 	<!-- NAVBAR HEADER -->
-		<nav class="navbar">
-			<div class="navbar-right">
-				<button id="menu-toggle" class="menu-toggle-btn" aria-label="Abrir menú">
-					<span class="hamburger">
-						<span></span>
-						<span></span>
-						<span></span>
-					</span>
-				</button>
-			</div>
-			<div id="menu-dropdown" class="menu-dropdown-horizontal">
-				<a href="index.html">Inicio</a>
-				<a href="index.html#two">Projectos</a>
-				<a href="skills.html">Skills y herramientas</a>
-				<a href="work.html">Experiencia Profesional</a>
-				<a href="work.html#two">Formación Académica</a>
-				<a href="index.html#three">Contacto</a>
-			</div>
+	<nav class="navbar">
+		<div class="navbar-right">
+			<button id="menu-toggle" class="menu-toggle-btn" aria-label="Abrir menú">
+				<span class="hamburger">
+					<span></span>
+					<span></span>
+					<span></span>
+				</span>
+			</button>
+		</div>
+
+		<div id="menu-dropdown" class="menu-dropdown-horizontal">
+			<a href="index.html" data-lang-es="Inicio" data-lang-en="Home">Inicio</a>
+			<a href="index.html#two" data-lang-es="Proyectos" data-lang-en="Projects">Proyectos</a>
+			<a href="skills.html" data-lang-es="Skills y herramientas" data-lang-en="Skills & Tools">Skills y herramientas</a>
+			<a href="work.html" data-lang-es="Experiencia Profesional" data-lang-en="Professional Experience">Experiencia Profesional</a>
+			<a href="work.html#two" data-lang-es="Formación Académica" data-lang-en="Education">Formación Académica</a>
+			<a href="index.html#three" data-lang-es="Contacto" data-lang-en="Contact">Contacto</a>
+		</div>
+
 	</nav>
+
 
 	<!-- Header -->
 	<header id="header">
+		<div class="locate">
+			<div class="language-switch-container">
+				<div class="language-switch">
+					<span id="lang-label">ES</span>
+					<label class="switch">
+						<input type="checkbox" id="lang-toggle">
+						<span class="slider round"></span>
+					</label>
+				</div>
+			</div>
+		</div>
 		<div class="inner">
 			<a href="index.html" class="image avatar"><img src="images/perfil.jpg" alt="Javier López" /></a>
-			<h1>
+			<h1 data-lang-es="<strong>Javier López</strong><br />Game Developer & Technical Artist<br /><span style='font-size: 0.7em; font-weight: 300;'>Especializado en desarrollo de gameplay, programación de sistemas y optimización técnica</span>"
+				data-lang-en="<strong>Javier López</strong><br />Game Developer & Technical Artist<br /><span style='font-size: 0.7em; font-weight: 300;'>Specialized in gameplay development, systems programming, and technical optimization</span>">
 				<strong>Javier López</strong><br />
 				Game Developer & Technical Artist<br />
 				<span style="font-size: 0.7em; font-weight: 300;">Especializado en desarrollo de gameplay, programación de sistemas y optimización técnica</span>
 			</h1>
+
+
 		</div>
 	</header>
 
@@ -48,15 +65,31 @@
 		<!-- One - About -->
 		<section id="one">
 			<header class="major">
-				<h2>Sobre mí</h2>
+				<h2 data-lang-es="Sobre mí" data-lang-en="About Me">Sobre mí</h2>
 			</header>
-			<p>Soy desarrollador de videojuegos especializado en <strong>Game Development</strong> y <strong>Technical Art</strong>, con experiencia tanto en la industria como en proyectos independientes.</p>
-			<p>En <strong>Uplay Online</strong> trabajé como <strong>QA Tester</strong>, contribuyendo a la estabilidad y calidad de títulos en producción. Posteriormente, en <strong>Digital Legends</strong> participé como <strong>Technical Artist Intern</strong>, optimizando assets para <strong>Warzone Mobile</strong> y asegurando la integración visual en distintos dispositivos.</p>
-			<p>En mis proyectos personales he liderado equipos como <strong>programador principal</strong> y <strong>artista técnico</strong>, diseñando sistemas de <strong>gameplay</strong>, <strong>IA</strong> y mecánicas innovadoras.</p>
-			<p>Mi objetivo es aportar soluciones técnicas que combinen eficiencia, rendimiento y calidad visual, creando experiencias inmersivas para todo tipo de jugadores.</p>
+			<p data-lang-es="Soy desarrollador de videojuegos especializado en <strong>Game Development</strong> y <strong>Technical Art</strong>, con experiencia tanto en la industria como en proyectos independientes."
+			   data-lang-en="I am a game developer specialized in <strong>Game Development</strong> and <strong>Technical Art</strong>, with experience both in the industry and in independent projects.">
+				Soy desarrollador de videojuegos especializado en <strong>Game Development</strong> y <strong>Technical Art</strong>, con experiencia tanto en la industria como en proyectos independientes.
+			</p>
+
+			<p data-lang-es="En <strong>Uplay Online</strong> trabajé como <strong>QA Tester</strong>, contribuyendo a la estabilidad y calidad de títulos en producción. Posteriormente, en <strong>Digital Legends</strong> participé como <strong>Technical Artist Intern</strong>, optimizando assets para <strong>Warzone Mobile</strong> y asegurando la integración visual en distintos dispositivos."
+			   data-lang-en="At <strong>Uplay Online</strong> I worked as a <strong>QA Tester</strong>, contributing to the stability and quality of production titles. Later, at <strong>Digital Legends</strong>, I participated as a <strong>Technical Artist Intern</strong>, optimizing assets for <strong>Warzone Mobile</strong> and ensuring visual integration across devices.">
+				En <strong>Uplay Online</strong> trabajé como <strong>QA Tester</strong>, contribuyendo a la estabilidad y calidad de títulos en producción. Posteriormente, en <strong>Digital Legends</strong> participé como <strong>Technical Artist Intern</strong>, optimizando assets para <strong>Warzone Mobile</strong> y asegurando la integración visual en distintos dispositivos.
+			</p>
+
+			<p data-lang-es="En mis proyectos personales he liderado equipos como <strong>programador principal</strong> y <strong>artista técnico</strong>, diseñando sistemas de <strong>gameplay</strong>, <strong>IA</strong> y mecánicas innovadoras."
+			   data-lang-en="In my personal projects I have led teams as <strong>lead programmer</strong> and <strong>technical artist</strong>, designing <strong>gameplay</strong>, <strong>AI</strong> systems, and innovative mechanics.">
+				En mis proyectos personales he liderado equipos como <strong>programador principal</strong> y <strong>artista técnico</strong>, diseñando sistemas de <strong>gameplay</strong>, <strong>IA</strong> y mecánicas innovadoras.
+			</p>
+
+			<p data-lang-es="Mi objetivo es aportar soluciones técnicas que combinen eficiencia, rendimiento y calidad visual, creando experiencias inmersivas para todo tipo de jugadores."
+			   data-lang-en="My goal is to provide technical solutions that combine efficiency, performance, and visual quality, creating immersive experiences for all types of players.">
+				Mi objetivo es aportar soluciones técnicas que combinen eficiencia, rendimiento y calidad visual, creando experiencias inmersivas para todo tipo de jugadores.
+			</p>
+
 			<ul class="actions">
-				<li><a href="#two" class="button">Ver Portfolio</a></li>
-				<li><a href="skills.html" class="button">Skills & Tools</a></li>
+				<li><a href="#" class="button" data-lang-es="Ver Portfolio" data-lang-en="View Portfolio">Ver Portfolio</a></li>
+				<li><a href="#" class="button" data-lang-es="Skills & Tools" data-lang-en="Skills & Tools">Skills & Tools</a></li>
 			</ul>
 		</section>
 
@@ -67,70 +100,71 @@
 				<!-- BRICKSOLVE -->
 				<article class="col-6 col-12-xsmall work-item">
 					<a href="images/Bricksolve.png" class="image fit thumb"><img src="images/Bricksolve.png" alt="Bricksolve Game Screenshot" /></a>
-					<h3>BRICKSOLVE - Proyecto Final</h3>
-					<p>
-						<strong>Lead Programmer & Technical Artist</strong><br />
-						BrickSolve es un proyecto final que mezcla <strong>puzzles dinámicos</strong> y acción. Mi rol fue diseñar e implementar las <strong>mecánicas principales de gameplay</strong>, la <strong>lógica de niveles</strong> y todos los <strong>sistemas técnicos</strong>. También desarrollé la <em>UI</em>, la funcionalidad del <strong>ray gun</strong> y optimicé tanto <strong>assets</strong> como <strong>niveles</strong>, logrando una experiencia <strong>fluida</strong>, <strong>desafiante</strong> y <strong>bien balanceada</strong> para el jugador.
+					<h3 data-lang-es="BRICKSOLVE - Proyecto Final" data-lang-en="BRICKSOLVE - Final Project">BRICKSOLVE - Proyecto Final</h3>
+					<p data-lang-es="<strong>Lead Programmer & Technical Artist</strong><br />BrickSolve es un proyecto final que mezcla <strong>puzzles dinámicos</strong> y acción. Mi rol fue diseñar e implementar las <strong>mecánicas principales de gameplay</strong>, la <strong>lógica de niveles</strong> y todos los <strong>sistemas técnicos</strong>. También desarrollé la <em>UI</em>, la funcionalidad del <strong>ray gun</strong> y optimicé tanto <strong>assets</strong> como <strong>niveles</strong>, logrando una experiencia <strong>fluida</strong>, <strong>desafiante</strong> y <strong>bien balanceada</strong> para el jugador."
+					   data-lang-en="<strong>Lead Programmer & Technical Artist</strong><br />BrickSolve is a final project that combines <strong>dynamic puzzles</strong> and action. My role was to design and implement the <strong>core gameplay mechanics</strong>, <strong>level logic</strong>, and all <strong>technical systems</strong>. I also developed the <em>UI</em>, the <strong>ray gun</strong> functionality, and optimized both <strong>assets</strong> and <strong>levels</strong>, achieving a <strong>smooth</strong>, <strong>challenging</strong>, and <strong>well-balanced</strong> experience for the player.">
+						<strong>Lead Programmer & Technical Artist</strong><br />BrickSolve es un proyecto final que mezcla <strong>puzzles dinámicos</strong> y acción. Mi rol fue diseñar e implementar las <strong>mecánicas principales de gameplay</strong>, la <strong>lógica de niveles</strong> y todos los <strong>sistemas técnicos</strong>. También desarrollé la <em>UI</em>, la funcionalidad del <strong>ray gun</strong> y optimicé tanto <strong>assets</strong> como <strong>niveles</strong>, logrando una experiencia <strong>fluida</strong>, <strong>desafiante</strong> y <strong>bien balanceada</strong> para el jugador.
 					</p>
 					<ul class="actions special">
-						<li><a href="https://bluemaze-games.itch.io/brick-solve" class="button small">Ver en Itch.io</a></li>
-						<li><a href="https://www.youtube.com/watch?v=jg5EIpfMWaQ" class="button small">Ver Tráiler</a></li>
+						<li><a href="https://bluemaze-games.itch.io/brick-solve" class="button small" data-lang-es="Ver en Itch.io" data-lang-en="View on Itch.io">Ver en Itch.io</a></li>
+						<li><a href="https://www.youtube.com/watch?v=jg5EIpfMWaQ" class="button small" data-lang-es="Ver Tráiler" data-lang-en="Watch Trailer">Ver Tráiler</a></li>
 					</ul>
 				</article>
 
 				<!-- NEAR THE END -->
 				<article class="col-6 col-12-xsmall work-item">
 					<a href="images/NearTheEnd.jpg" class="image fit thumb"><img src="images/NearTheEnd.jpg" alt="Near the End Game Screenshot" /></a>
-					<h3>NEAR THE END</h3>
-					<p>
-						<strong>Principal Programmer & Technical Artist</strong><br />
-						Near the End es un juego narrativo de acción donde el jugador debe sobrevivir en un mundo hostil. Lideré la programación de la <strong>IA enemiga avanzada</strong>, los <strong>controles del jugador</strong> y la <strong>arquitectura completa de gameplay</strong>. Además, desarrollé la <em>UI</em> e integré los <strong>elementos visuales</strong> para garantizar una experiencia <strong>coherente</strong>, <strong>inmersiva</strong> y con un <strong>ritmo de juego atractivo</strong>.
+					<h3 data-lang-es="NEAR THE END" data-lang-en="NEAR THE END">NEAR THE END</h3>
+					<p data-lang-es="<strong>Principal Programmer & Technical Artist</strong><br />Near the End es un juego narrativo de acción donde el jugador debe sobrevivir en un mundo hostil. Lideré la programación de la <strong>IA enemiga avanzada</strong>, los <strong>controles del jugador</strong> y la <strong>arquitectura completa de gameplay</strong>. Además, desarrollé la <em>UI</em> e integré los <strong>elementos visuales</strong> para garantizar una experiencia <strong>coherente</strong>, <strong>inmersiva</strong> y con un <strong>ritmo de juego atractivo</strong>."
+					   data-lang-en="<strong>Principal Programmer & Technical Artist</strong><br />Near the End is a narrative action game where the player must survive in a hostile world. I led the programming of the <strong>advanced enemy AI</strong>, <strong>player controls</strong>, and the <strong>entire gameplay architecture</strong>. I also developed the <em>UI</em> and integrated <strong>visual elements</strong> to ensure a <strong>coherent</strong>, <strong>immersive</strong>, and <strong>engaging gameplay flow</strong>.">
+						<strong>Principal Programmer & Technical Artist</strong><br />Near the End es un juego narrativo de acción donde el jugador debe sobrevivir en un mundo hostil. Lideré la programación de la <strong>IA enemiga avanzada</strong>, los <strong>controles del jugador</strong> y la <strong>arquitectura completa de gameplay</strong>. Además, desarrollé la <em>UI</em> e integré los <strong>elementos visuales</strong> para garantizar una experiencia <strong>coherente</strong>, <strong>inmersiva</strong> y con un <strong>ritmo de juego atractivo</strong>.
 					</p>
 					<ul class="actions special">
-						<li><a href="https://polpa.itch.io/near-the-end" class="button small">Ver en Itch.io</a></li>
-						<li><a href="https://www.youtube.com/watch?v=174GBSePtm0" class="button small">Ver Tráiler</a></li>
+						<li><a href="https://polpa.itch.io/near-the-end" class="button small" data-lang-es="Ver en Itch.io" data-lang-en="View on Itch.io">Ver en Itch.io</a></li>
+						<li><a href="https://www.youtube.com/watch?v=174GBSePtm0" class="button small" data-lang-es="Ver Tráiler" data-lang-en="Watch Trailer">Ver Tráiler</a></li>
 					</ul>
 				</article>
 
 				<!-- FAUNA -->
 				<article class="col-6 col-12-xsmall work-item">
 					<a href="images/Logo_Fauna.png" class="image fit thumb"><img src="images/Logo_Fauna.png" alt="Fauna Game Logo" /></a>
-					<h3>FAUNA - Proyecto Final</h3>
-					<p>
-						<strong>Main Programmer & Technical Artist</strong><br />
-						Fauna es un juego de exploración donde el jugador puede transformarse para interactuar con el entorno. Me encargué de crear las <strong>mecánicas de transformación</strong>, las <strong>interacciones ambientales</strong> y el <em>scripting de niveles</em>. También desarrollé la <em>UI</em> e integré los <strong>assets</strong> para construir una experiencia <strong>dinámica</strong> y <strong>envolvente</strong>, que invita al jugador a experimentar con su entorno.
+					<h3 data-lang-es="FAUNA - Proyecto Final" data-lang-en="FAUNA - Final Project">FAUNA - Proyecto Final</h3>
+					<p data-lang-es="<strong>Main Programmer & Technical Artist</strong><br />Fauna es un juego de exploración donde el jugador puede transformarse para interactuar con el entorno. Me encargué de crear las <strong>mecánicas de transformación</strong>, las <strong>interacciones ambientales</strong> y el <em>scripting de niveles</em>. También desarrollé la <em>UI</em> e integré los <strong>assets</strong> para construir una experiencia <strong>dinámica</strong> y <strong>envolvente</strong>, que invita al jugador a experimentar con su entorno."
+					   data-lang-en="<strong>Main Programmer & Technical Artist</strong><br />Fauna is an exploration game where the player can transform to interact with the environment. I was responsible for creating the <strong>transformation mechanics</strong>, <strong>environmental interactions</strong>, and <em>level scripting</em>. I also developed the <em>UI</em> and integrated the <strong>assets</strong> to build a <strong>dynamic</strong> and <strong>immersive</strong> experience that encourages the player to experiment with their surroundings.">
+						<strong>Main Programmer & Technical Artist</strong><br />Fauna es un juego de exploración donde el jugador puede transformarse para interactuar con el entorno. Me encargué de crear las <strong>mecánicas de transformación</strong>, las <strong>interacciones ambientales</strong> y el <em>scripting de niveles</em>. También desarrollé la <em>UI</em> e integré los <strong>assets</strong> para construir una experiencia <strong>dinámica</strong> y <strong>envolvente</strong>, que invita al jugador a experimentar con su entorno.
 					</p>
 					<ul class="actions special">
-						<li><a href="https://fairygames.itch.io/fauna-fairygames" class="button small">Ver en Itch.io</a></li>
-						<li><a href="https://www.youtube.com/watch?v=ro_a5QBVG4M&t=1s" class="button small">Ver Tráiler</a></li>
+						<li><a href="https://fairygames.itch.io/fauna-fairygames" class="button small" data-lang-es="Ver en Itch.io" data-lang-en="View on Itch.io">Ver en Itch.io</a></li>
+						<li><a href="https://www.youtube.com/watch?v=ro_a5QBVG4M&t=1s" class="button small" data-lang-es="Ver Tráiler" data-lang-en="Watch Trailer">Ver Tráiler</a></li>
 					</ul>
 				</article>
 
 				<!-- Warzone Mobile -->
 				<article class="col-6 col-12-xsmall work-item">
 					<a href="images/coc.jpg" class="image fit thumb"><img src="images/coc.jpg" alt="Warzone Mobile Assets" /></a>
-					<h3>Warzone Mobile - Digital Legends</h3>
-					<p>
-						<strong>Technical Artist Intern</strong><br />
-						Formé parte del equipo de <strong>Warzone Mobile</strong>, un título <strong>AAA</strong> para múltiples plataformas. Mi trabajo consistió en revisar y optimizar <strong>assets 3D</strong>, asegurando tanto la <strong>calidad visual</strong> como el <strong>cumplimiento técnico</strong> en un entorno de <strong>alto rendimiento</strong>. Contribuí a mejorar la <strong>estabilidad</strong> y la <strong>eficiencia</strong> del juego sin comprometer su <strong>calidad gráfica</strong>, participando en un <strong>pipeline</strong> propio de producciones de gran escala.
+					<h3 data-lang-es="Warzone Mobile - Digital Legends" data-lang-en="Warzone Mobile - Digital Legends">Warzone Mobile - Digital Legends</h3>
+					<p data-lang-es="<strong>Technical Artist Intern</strong><br />Formé parte del equipo de <strong>Warzone Mobile</strong>, un título <strong>AAA</strong> para múltiples plataformas. Mi trabajo consistió en revisar y optimizar <strong>assets 3D</strong>, asegurando tanto la <strong>calidad visual</strong> como el <strong>cumplimiento técnico</strong> en un entorno de <strong>alto rendimiento</strong>. Contribuí a mejorar la <strong>estabilidad</strong> y la <strong>eficiencia</strong> del juego sin comprometer su <strong>calidad gráfica</strong>, participando en un <strong>pipeline</strong> propio de producciones de gran escala."
+					   data-lang-en="<strong>Technical Artist Intern</strong><br />I was part of the <strong>Warzone Mobile</strong> team, a <strong>AAA</strong> title for multiple platforms. My work consisted of reviewing and optimizing <strong>3D assets</strong>, ensuring both <strong>visual quality</strong> and <strong>technical compliance</strong> in a <strong>high-performance</strong> environment. I contributed to improving the game’s <strong>stability</strong> and <strong>efficiency</strong> without compromising its <strong>graphical quality</strong>, participating in a <strong>pipeline</strong> typical of large-scale productions.">
+						<strong>Technical Artist Intern</strong><br />Formé parte del equipo de <strong>Warzone Mobile</strong>, un título <strong>AAA</strong> para múltiples plataformas. Mi trabajo consistió en revisar y optimizar <strong>assets 3D</strong>, asegurando tanto la <strong>calidad visual</strong> como el <strong>cumplimiento técnico</strong> en un entorno de <strong>alto rendimiento</strong>. Contribuí a mejorar la <strong>estabilidad</strong> y la <strong>eficiencia</strong> del juego sin comprometer su <strong>calidad gráfica</strong>, participando en un <strong>pipeline</strong> propio de producciones de gran escala.
 					</p>
 				</article>
 
 				<!-- QA Testing Projects -->
 				<article class="col-6 col-12-xsmall work-item">
 					<a href="images/uplay.png" class="image fit thumb"><img src="images/uplay.png" alt="Uplay QA Testing" /></a>
-					<h3>QA Testing - Uplay Online</h3>
-					<p>
-						<strong>QA Tester</strong><br />
-						En <strong>Uplay Online</strong> participé en el testeo de <strong>tres títulos comerciales</strong>, realizando <strong>pruebas exhaustivas</strong> para detectar y documentar <strong>errores críticos</strong>. Gracias a mi labor, el equipo pudo implementar correcciones que mejoraron la <strong>estabilidad</strong> y el <strong>rendimiento</strong>, contribuyendo a ofrecer experiencias más <strong>sólidas</strong> y <strong>pulidas</strong> para los jugadores. Esta experiencia me permitió comprender a fondo la importancia de la <strong>calidad</strong> en todas las fases del desarrollo.
+					<h3 data-lang-es="QA Testing - Uplay Online" data-lang-en="QA Testing - Uplay Online">QA Testing - Uplay Online</h3>
+					<p data-lang-es="<strong>QA Tester</strong><br />En <strong>Uplay Online</strong> participé en el testeo de <strong>tres títulos comerciales</strong>, realizando <strong>pruebas exhaustivas</strong> para detectar y documentar <strong>errores críticos</strong>. Gracias a mi labor, el equipo pudo implementar correcciones que mejoraron la <strong>estabilidad</strong> y el <strong>rendimiento</strong>, contribuyendo a ofrecer experiencias más <strong>sólidas</strong> y <strong>pulidas</strong> para los jugadores. Esta experiencia me permitió comprender a fondo la importancia de la <strong>calidad</strong> en todas las fases del desarrollo."
+					   data-lang-en="<strong>QA Tester</strong><br />At <strong>Uplay Online</strong> I participated in the testing of <strong>three commercial titles</strong>, conducting <strong>thorough testing</strong> to detect and document <strong>critical bugs</strong>. Thanks to my work, the team was able to implement fixes that improved <strong>stability</strong> and <strong>performance</strong>, helping deliver <strong>solid</strong> and <strong>polished</strong> experiences for players. This experience allowed me to deeply understand the importance of <strong>quality</strong> in all stages of development.">
+						<strong>QA Tester</strong><br />En <strong>Uplay Online</strong> participé en el testeo de <strong>tres títulos comerciales</strong>, realizando <strong>pruebas exhaustivas</strong> para detectar y documentar <strong>errores críticos</strong>. Gracias a mi labor, el equipo pudo implementar correcciones que mejoraron la <strong>estabilidad</strong> y el <strong>rendimiento</strong>, contribuyendo a ofrecer experiencias más <strong>sólidas</strong> y <strong>pulidas</strong> para los jugadores. Esta experiencia me permitió comprender a fondo la importancia de la <strong>calidad</strong> en todas las fases del desarrollo.
 					</p>
 				</article>
 
 				<!-- Próximo Proyecto -->
 				<article class="col-6 col-12-xsmall work-item">
 					<a href="images/soon.jpg" class="image fit thumb"><img src="images/soon.jpg" alt="Próximo Proyecto" /></a>
-					<h3>Próximo Proyecto</h3>
-					<p>
+					<h3 data-lang-es="Próximo Proyecto" data-lang-en="Upcoming Project">Próximo Proyecto</h3>
+					<p data-lang-es="Actualmente estoy trabajando en <strong>prototipos experimentales</strong> con <strong>Unreal Engine 5</strong>, explorando tecnologías de vanguardia como <strong>Nanite</strong> y <strong>Lumen</strong> para crear mundos más <strong>detallados</strong> y sistemas de <strong>iluminación realista</strong>. Mi objetivo es combinar <strong>innovación técnica</strong> y <strong>diseño de gameplay</strong>, desarrollando experiencias de <strong>próxima generación</strong> que unan <strong>rendimiento</strong>, <strong>calidad visual</strong> e ideas frescas en <strong>mecánicas jugables</strong>."
+					   data-lang-en="I am currently working on <strong>experimental prototypes</strong> with <strong>Unreal Engine 5</strong>, exploring cutting-edge technologies such as <strong>Nanite</strong> and <strong>Lumen</strong> to create more <strong>detailed worlds</strong> and <strong>realistic lighting systems</strong>. My goal is to combine <strong>technical innovation</strong> and <strong>gameplay design</strong>, developing <strong>next-generation</strong> experiences that bring together <strong>performance</strong>, <strong>visual quality</strong>, and fresh ideas in <strong>gameplay mechanics</strong>.">
 						Actualmente estoy trabajando en <strong>prototipos experimentales</strong> con <strong>Unreal Engine 5</strong>, explorando tecnologías de vanguardia como <strong>Nanite</strong> y <strong>Lumen</strong> para crear mundos más <strong>detallados</strong> y sistemas de <strong>iluminación realista</strong>. Mi objetivo es combinar <strong>innovación técnica</strong> y <strong>diseño de gameplay</strong>, desarrollando experiencias de <strong>próxima generación</strong> que unan <strong>rendimiento</strong>, <strong>calidad visual</strong> e ideas frescas en <strong>mecánicas jugables</strong>.
 					</p>
 				</article>
@@ -141,52 +175,67 @@
 
 		<!-- Three - Contact -->
 		<section id="three">
-			<h2>Contacto</h2>
-			<p>¿Tienes un proyecto interesante? ¿Buscas un desarrollador con experiencia en gameplay y optimización técnica? Me encantaría escuchar sobre tu próximo proyecto y cómo puedo contribuir a hacerlo realidad.</p>
+			<h2 data-lang-es="Contacto"
+				data-lang-en="Contact">
+				Contacto
+			</h2>
+
+			<p data-lang-es="¿Tienes un proyecto interesante? ¿Buscas un desarrollador con experiencia en gameplay y optimización técnica? Me encantaría escuchar sobre tu próximo proyecto y cómo puedo contribuir a hacerlo realidad."
+			   data-lang-en="Do you have an interesting project? Are you looking for a developer with experience in gameplay and technical optimization? I’d love to hear about your next project and how I can help make it a reality.">
+				¿Tienes un proyecto interesante? ¿Buscas un desarrollador con experiencia en gameplay y optimización técnica? Me encantaría escuchar sobre tu próximo proyecto y cómo puedo contribuir a hacerlo realidad.
+			</p>
+
 			<div class="row">
 				<div class="col-8 col-12-small">
 					<form method="POST" action="https://formspree.io/f/xandlzog">
 						<div class="row gtr-uniform gtr-50">
 							<div class="col-6 col-12-xsmall">
-								<input type="text" name="name" id="name" placeholder="Nombre" required />
+								<input type="text" name="name" id="name" placeholder="Nombre" data-lang-es="Nombre" data-lang-en="Name" required />
 							</div>
 							<div class="col-6 col-12-xsmall">
-								<input type="email" name="email" id="email" placeholder="Email" required />
+								<input type="email" name="email" id="email" placeholder="Email" data-lang-es="Email" data-lang-en="Email" required />
 							</div>
 							<div class="col-12">
-								<input type="text" name="subject" id="subject" placeholder="Asunto" />
+								<input type="text" name="subject" id="subject" placeholder="Asunto" data-lang-es="Asunto" data-lang-en="Subject" />
 							</div>
 							<div class="col-12">
-								<textarea name="message" id="message" placeholder="Mensaje" rows="6" required></textarea>
+								<textarea name="message" id="message" placeholder="Mensaje" data-lang-es="Mensaje" data-lang-en="Message" rows="6" required></textarea>
 							</div>
 						</div>
 						<ul class="actions" style="margin-top: 2em;">
-							<li><input type="submit" value="Enviar Mensaje" class="primary" /></li>
-							<li><input type="reset" value="Limpiar" /></li>
+							<li><input type="submit" value="Enviar Mensaje" data-lang-es="Enviar Mensaje" data-lang-en="Send Message" class="primary" /></li>
+							<li><input type="reset" value="Limpiar" data-lang-es="Limpiar" data-lang-en="Clear" /></li>
 						</ul>
 					</form>
 				</div>
+
 				<div class="col-4 col-12-small">
 					<ul class="labeled-icons">
 						<li>
-							<h3 class="icon solid fa-home"><span class="label">Dirección</span></h3>
-							Rambla Josep Anselm Clavé, 15<br />
-							Cornellà de Llobregat<br />
-							Barcelona, España
+							<h3 class="icon solid fa-home"><span class="label" data-lang-es="Dirección" data-lang-en="Address">Dirección</span></h3>
+							<span data-lang-es="Rambla Josep Anselm Clavé, 15<br />Cornellà de Llobregat<br />Barcelona, España"
+								  data-lang-en="Rambla Josep Anselm Clavé, 15<br />Cornellà de Llobregat<br />Barcelona, Spain">
+								Rambla Josep Anselm Clavé, 15<br />
+								Cornellà de Llobregat<br />
+								Barcelona, España
+							</span>
 						</li>
 						<li>
-							<h3 class="icon solid fa-mobile-alt"><span class="label">Teléfono</span></h3>
+							<h3 class="icon solid fa-mobile-alt"><span class="label" data-lang-es="Teléfono" data-lang-en="Phone">Teléfono</span></h3>
 							+34 694 47 57 11
 						</li>
 						<li>
-							<h3 class="icon solid fa-envelope"><span class="label">Email</span></h3>
+							<h3 class="icon solid fa-envelope"><span class="label" data-lang-es="Email" data-lang-en="Email">Email</span></h3>
 							<a href="mailto:javierlopez3482@gmail.com">javierlopez3482@gmail.com</a>
 						</li>
 						<li>
-							<h3 class="icon solid fa-globe"><span class="label">Idiomas</span></h3>
-							Español (Nativo)<br />
-							Catalán (Nativo)<br />
-							Inglés (Profesional)
+							<h3 class="icon solid fa-globe"><span class="label" data-lang-es="Idiomas" data-lang-en="Languages">Idiomas</span></h3>
+							<span data-lang-es="Español (Nativo)<br />Catalán (Nativo)<br />Inglés (Profesional)"
+								  data-lang-en="Spanish (Native)<br />Catalan (Native)<br />English (Professional)">
+								Español (Nativo)<br />
+								Catalán (Nativo)<br />
+								Inglés (Profesional)
+							</span>
 						</li>
 					</ul>
 				</div>
@@ -215,5 +264,29 @@
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
 	<script src="assets/js/nav.js"></script>
+	<script>
+		const toggle = document.getElementById('lang-toggle');
+		const label = document.getElementById('lang-label');
+		const elements = document.querySelectorAll('[data-lang-es]');
+
+		toggle.addEventListener('change', () => {
+			const lang = toggle.checked ? 'en' : 'es';
+			label.textContent = lang.toUpperCase();
+
+            elements.forEach(el => {
+                const langValue = el.getAttribute(`data-lang-${lang}`);
+
+                if (el.tagName === 'TEXTAREA' || (el.tagName === 'INPUT' && (el.type === 'text' || el.type === 'email'))) {
+                    el.placeholder = langValue;  // texto y textarea
+                } else if (el.tagName === 'INPUT' && (el.type === 'submit' || el.type === 'reset')) {
+                    el.value = langValue;        // botones
+                } else {
+                    el.innerHTML = langValue;    // otros elementos
+                }
+            });
+		});
+	</script>
+
+
 </body>
 </html>
