@@ -2037,12 +2037,12 @@ input, select, textarea {
 
 /* Image */
 
-	.image {
-		border-radius: 0.35em;
-		border: 0;
-		display: inline-block;
-		position: relative;
-	}
+.image {
+	border-radius: 0.35em;
+	border: 0;
+	display: inline-block;
+	position: relative;
+}
 
 		.image:before {
 			-moz-transition: opacity 0.2s ease-in-out;
@@ -2133,18 +2133,20 @@ input, select, textarea {
 				width: 100%;
 			}
 
-		.image.avatar {
-			border-radius: 100%;
-		}
+	.image.avatar {
+		border-radius: 100%;
+	}
 
 			.image.avatar:before {
 				display: none;
 			}
 
-			.image.avatar img {
-				border-radius: 100%;
-				width: 100%;
-			}
+		.image.avatar img {
+			border-radius: 100%;
+			width: 100%;
+			width: 160px; /* Elige el tamaño que quieras */
+			height: 160px; /* Mantén la proporción o usa solo width */
+		}
 
 /* List */
 
@@ -2684,7 +2686,7 @@ input, select, textarea {
 	#main {
 		margin-left: 35%;
 		max-width: 54em;
-		padding: 8em 4em 4em 4em;
+		padding: 4em 4em 4em 4em;
 		width: calc(100% - 35%);
 	}
 

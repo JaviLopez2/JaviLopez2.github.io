@@ -1,0 +1,164 @@
+/* Radar Chart Styles - integrados con main.css/custom.css/nav.css */
+.radar-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2.5rem;
+    padding: 2rem 0;
+    /* Añadido para dos columnas responsivas */
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.radar-skill {
+    flex: 1 1 45%;
+    box-sizing: border-box;
+    /* Fuerza dos columnas y alineación */
+    min-width: 350px;
+    max-width: 500px;
+    text-align: center;
+    position: relative;
+    margin-bottom: 2rem;
+    background: rgba(255,255,255,0.02);
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(76,191,157,0.08);
+    padding: 1.5rem 1rem 1rem 1rem;
+}
+
+.skill-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #49bf9d;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.04em;
+}
+
+.radar-chart {
+    width: 100%;
+    height: 300px;
+    margin: 0 auto 1rem;
+    display: block;
+}
+
+.radar-bg {
+    fill: none;
+    stroke: #bbb;
+    stroke-width: 1.4;
+}
+
+.radar-area {
+    fill: rgba(73, 191, 157, 0.22);
+    stroke: #49bf9d;
+    stroke-width: 2.5;
+    filter: drop-shadow(0 0 14px rgba(73,191,157,0.12));
+}
+
+.radar-points {
+    fill: #49bf9d;
+    stroke: #fff;
+    stroke-width: 1.6;
+}
+
+.radar-labels {
+    font-size: 0.9em;
+    fill: #888;
+    font-family: inherit;
+    text-anchor: middle;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+}
+
+.overall-score {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #49bf9d;
+    margin-top: 0.8rem;
+}
+
+/* ---- OPCIÓN 1: Título destacado con subrayado ---- 
+.major h2, .option-title {
+    font-size: 2.1rem;
+    font-weight: 800;
+    color: #49bf9d;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+    border-bottom: 2px solid #49bf9d1A;
+    padding-bottom: 0.18em;
+}
+
+/* ---- OPCIÓN 2: Título con fondo degradado y sombra ---- */
+/*
+.major h2, .option-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+    background: linear-gradient(90deg, #49bf9d 0%, #4776e6 100%);
+    box-shadow: 0 3px 14px rgba(73,191,157,0.09);
+    border-radius: 12px;
+    padding: 0.35em 1.2em;
+    display: inline-block;
+    letter-spacing: 0.03em;
+    margin-bottom: 0.8rem;
+}
+*/
+.major, .option {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+    .major h2, .option-title {
+        font-size: 2.4rem;
+        font-weight: 800;
+        color: #49bf9d;
+        letter-spacing: 0.06em;
+        margin-bottom: 0.8rem;
+        margin-top: 0.2em;
+        text-shadow: 0 2px 12px rgba(73,191,157,0.13);
+        background: linear-gradient(90deg, #49bf9d 70%, #4776e6 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+        border-radius: 14px;
+        display: inline-block;
+        padding: 0.15em 1.5em;
+    }
+
+@media (max-width: 900px) {
+    .major h2, .option-title {
+        font-size: 1.6rem;
+        padding: 0.12em 0.7em;
+    }
+}
+@media (max-width: 1100px) {
+    .radar-container {
+        max-width: 760px;
+        gap: 1.5rem;
+    }
+
+    .radar-skill {
+        min-width: 300px;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 900px) {
+    .radar-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        max-width: 100%;
+    }
+
+    .radar-skill {
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    .radar-chart {
+        width: 100%;
+        height: 220px;
+    }
+}

@@ -1,0 +1,123 @@
+.timeline {
+    position: relative;
+    padding-left: 30px;
+}
+
+    .timeline:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: #49bf9d;
+    }
+
+.timeline-item {
+    position: relative;
+    padding-bottom: 2em;
+}
+
+    .timeline-item:before {
+        content: '';
+        position: absolute;
+        left: -34px;
+        top: 5px;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: #49bf9d;
+    }
+
+.timeline-date {
+    color: #2c7f6f;
+    font-weight: 600;
+    margin-bottom: 0.5em;
+    border-bottom: 1px solid rgba(160, 160, 160, 0.3);
+}
+
+.education-item {
+    margin-bottom: 2em;
+    padding-bottom: 1.5em;
+    border-bottom: 1px solid rgba(160, 160, 160, 0.3);
+}
+
+    .education-item:last-child {
+        border-bottom: none;
+    }
+
+    .education-item .date {
+        color: #2c7f6f;
+        font-weight: 700;
+        text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+    }
+
+.work-item h3 {
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+}
+
+.work-item p {
+    line-height: 1.6;
+    margin-bottom: 1em;
+}
+
+    #one p strong,
+    #one p em,
+    .work-item p strong,
+    .work-item p em {
+        color: #2c7f6f;
+        font-weight: 700;
+        text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+    }
+
+.work-item .thumb img {
+    width: 100%;
+    height: 270px;
+    object-fit: fill;
+    display: block;
+}
+
+.actions.special {
+    margin-top: 0.5em;
+}
+.main-title, #main h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #fff;
+    background: linear-gradient(90deg, #49bf9d 60%, #4776e6 100%);
+    box-shadow: 0 3px 14px rgba(73,191,157,0.09);
+    border-radius: 12px;
+    padding: 0.18em 1.2em;
+    display: inline-block;
+    margin-top: 2rem;
+    margin-bottom: 1.2rem;
+    letter-spacing: 0.04em;
+    background-clip: text;
+    -webkit-background-clip: text;
+    text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+
+#skills h3 {
+    color: #2c7f6f;
+    font-weight: 700;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    border-bottom: 1px solid rgba(160, 160, 160, 0.3);
+}
+
+#skills ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+    #skills ul li {
+        padding: 0.3em 0;
+        border-bottom: 1px dotted rgba(160, 160, 160, 0.3);
+    }
+
+        #skills ul li:last-child {
+            border-bottom: none;
+        }

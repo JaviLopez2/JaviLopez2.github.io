@@ -1,0 +1,187 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+	<title>Skills y Herramientas - Javier López</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<link rel="stylesheet" href="assets/css/custom.css" />
+	<link rel="stylesheet" href="assets/css/nav.css" />
+	<link rel="stylesheet" href="assets/css/radar.css" />
+</head>
+<body class="is-preload">
+
+	<!-- NAVBAR HEADER -->
+	<nav class="navbar">
+		<div class="navbar-right">
+			<button id="menu-toggle" class="menu-toggle-btn" aria-label="Abrir menú">
+				<span class="hamburger">
+					<span></span>
+					<span></span>
+					<span></span>
+				</span>
+			</button>
+		</div>
+		<div id="menu-dropdown" class="menu-dropdown-horizontal">
+			<a href="index.html">Inicio</a>
+			<a href="projectos.html">Projectos</a>
+			<a href="skills.html">Skills y herramientas</a>
+			<a href="experiencia.html">Experiencia Profesional</a>
+			<a href="formacion.html">Formación Académica</a>
+			<a href="contacto.html">Contacto</a>
+		</div>
+	</nav>
+
+	<!-- Header -->
+	<header id="header">
+		<div class="inner">
+			<a href="index.html" class="image avatar"><img src="images/perfil.jpg" alt="Javier López" /></a>
+			<h1>
+				<strong>Javier López</strong><br />
+				Game Developer & Technical Artist<br />
+				<span style="font-size: 0.7em; font-weight: 300;">Especializado en desarrollo de gameplay, programación de sistemas y optimización técnica</span>
+			</h1>
+		</div>
+	</header>
+
+	<!-- Main -->
+	<div id="main">
+		<section id="skills">
+			<header class="major">
+				<h2>Skills y Herramientas</h2>
+			</header>
+			<div class="option">
+				<h2 class="option-title">Radar de Skills por Categorías</h2>
+				<div class="radar-container">
+					<!-- Programming -->
+					<div class="radar-skill">
+						<div class="skill-title">Programming</div>
+						<svg class="radar-chart" viewBox="0 0 300 300">
+							<!-- Pentágonos de fondo para 5 vértices (igual que Game Engines) -->
+							<polygon class="radar-bg" points="150,40 242,98 207,222 93,222 58,98" />
+							<polygon class="radar-bg" points="150,80 217,117 190,196 110,196 83,117" />
+							<polygon class="radar-bg" points="150,120 192,136 173,170 127,170 108,136" />
+							<!-- SCORES: C# (alto), C++(alto), JavaScript(medio-alto), Shaderlab(bajo), hlsl (bajo) -->
+							<polygon class="radar-area"
+									 points="150,45 225,110 180,185 115,180 100,120" />
+							<!-- Puntos -->
+							<circle class="radar-points" cx="150" cy="45" r="5" /><!-- C# (alto) -->
+							<circle class="radar-points" cx="225" cy="110" r="5" /><!-- C++ (alto) -->
+							<circle class="radar-points" cx="180" cy="185" r="5" /><!-- JavaScript (medio-alto) -->
+							<circle class="radar-points" cx="115" cy="180" r="5" /><!-- Shaderlab (bajo) -->
+							<circle class="radar-points" cx="100" cy="120" r="5" /><!-- HLSL (muy bajo) -->
+							<!-- Labels (sentido horario desde arriba/C#): -->
+							<text class="radar-labels" x="150" y="32">C#</text>
+							<text class="radar-labels" x="255" y="105">C++</text>
+							<text class="radar-labels" x="205" y="210">JavaScript</text>
+							<text class="radar-labels" x="120" y="235">Shaderlab</text>
+							<text class="radar-labels" x="45" y="120">HLSL</text>
+						</svg>
+						<div class="overall-score">6.9/10</div>
+					</div>
+					<!-- Game Engines -->
+					<div class="radar-skill">
+						<div class="skill-title">Game Engines</div>
+						<svg class="radar-chart" viewBox="0 0 300 300">
+							<!-- Pentágonos de fondo -->
+							<polygon class="radar-bg" points="150,40 242,98 207,222 93,222 58,98" />
+							<polygon class="radar-bg" points="150,80 217,117 190,196 110,196 83,117" />
+							<polygon class="radar-bg" points="150,120 192,136 173,170 127,170 108,136" />
+							<!-- SCORES: Unity (alto), Unreal (alto), Godot (medio), GameMaker (bajo), CryEngine (muy bajo) -->
+							<polygon class="radar-area"
+									 points="150,45 225,110 180,180 120,180 100,110" />
+							<!-- Puntos -->
+							<circle class="radar-points" cx="150" cy="45" r="5" /><!-- Unity -->
+							<circle class="radar-points" cx="225" cy="110" r="5" /><!-- Unreal -->
+							<circle class="radar-points" cx="180" cy="180" r="5" /><!-- Godot -->
+							<circle class="radar-points" cx="120" cy="180" r="5" /><!-- GameMaker -->
+							<circle class="radar-points" cx="100" cy="110" r="5" /><!-- CryEngine -->
+							<!-- Labels colocados en los vértices -->
+							<text class="radar-labels" x="150" y="32">Unity</text>
+							<text class="radar-labels" x="255" y="105">Unreal</text>
+							<text class="radar-labels" x="205" y="210">Godot</text>
+							<text class="radar-labels" x="95" y="210">GameMaker</text>
+							<text class="radar-labels" x="45" y="105">CryEngine</text>
+						</svg>
+						<div class="overall-score">6.6/10</div>
+					</div>
+					<!-- Artistic & Creative Tools -->
+					<div class="radar-skill">
+						<div class="skill-title">Artistic & Creative Tools</div>
+						<svg class="radar-chart" viewBox="0 0 300 300">
+							<!-- Pentágonos de fondo -->
+							<polygon class="radar-bg" points="150,40 242,98 207,222 93,222 58,98" />
+							<polygon class="radar-bg" points="150,80 217,117 190,196 110,196 83,117" />
+							<polygon class="radar-bg" points="150,120 192,136 173,170 127,170 108,136" />
+							<!-- SCORES: 3ds Max (alto), Photoshop(alto), Blender(medio-alto), Substance(medio), Maya (medio) -->
+							<polygon class="radar-area"
+									 points="150,55 225,110 185,195 120,180 100,110" />
+							<!-- Puntos -->
+							<circle class="radar-points" cx="150" cy="55" r="5" /><!-- 3ds Max (alto) -->
+							<circle class="radar-points" cx="225" cy="110" r="5" /><!-- Photoshop (alto) -->
+							<circle class="radar-points" cx="185" cy="195" r="5" /><!-- Blender (medio-alto) -->
+							<circle class="radar-points" cx="120" cy="180" r="5" /><!-- Substance (medio) -->
+							<circle class="radar-points" cx="100" cy="110" r="5" /><!-- Maya (medio) -->
+							<!-- Labels (sentido horario desde arriba/3ds Max): -->
+							<text class="radar-labels" x="150" y="35">3ds Max</text>
+							<text class="radar-labels" x="255" y="115">Photoshop</text>
+							<text class="radar-labels" x="205" y="210">Blender</text>
+							<text class="radar-labels" x="95" y="105">Substance</text>
+							<text class="radar-labels" x="95" y="210">Maya</text>
+						</svg>
+						<div class="overall-score">7.5/10</div>
+					</div>
+					<!-- DevOps & Collaboration -->
+					<div class="radar-skill">
+						<div class="skill-title">DevOps & Collaboration</div>
+						<svg class="radar-chart" viewBox="0 0 300 300">
+							<!-- Pentágonos de fondo -->
+							<polygon class="radar-bg" points="150,40 242,98 207,222 93,222 58,98" />
+							<polygon class="radar-bg" points="150,80 217,117 190,196 110,196 83,117" />
+							<polygon class="radar-bg" points="150,120 192,136 173,170 127,170 108,136" />
+							<!-- SCORES: Git (alto), Perforce(alto), Jira(alto), CI/CD(medio), Slack (medio) -->
+							<polygon class="radar-area"
+									 points="150,60 229,116 191,195 109,195 100,110" />
+							<!-- Puntos -->
+							<circle class="radar-points" cx="150" cy="60" r="5" /><!-- Git (alto) -->
+							<circle class="radar-points" cx="229" cy="116" r="5" /><!-- Perforce (alto) -->
+							<circle class="radar-points" cx="191" cy="195" r="5" /><!-- Jira (alto) -->
+							<circle class="radar-points" cx="100" cy="110" r="5" /><!-- CI/CD (medio) -->
+							<circle class="radar-points" cx="109" cy="195" r="5" /><!-- Slack (medio) -->
+							<!-- Labels -->
+							<text class="radar-labels" x="150" y="35">Git</text>
+							<text class="radar-labels" x="255" y="115">Perforce</text>
+							<text class="radar-labels" x="205" y="225">Jira</text>
+							<text class="radar-labels" x="95" y="105">CI/CD</text>
+							<text class="radar-labels" x="95" y="225">Slack</text>
+						</svg>
+						<div class="overall-score">7.8/10</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+
+	<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<ul class="icons">
+				<li><a href="https://github.com/JaviLopez2" class="icon brands fa-github"><span class="label">Github</span></a></li>
+				<!-- ... -->
+			</ul>
+			<ul class="copyright">
+				<li>&copy; 2025 Javier López</li>
+				<li>Game Developer & Technical Artist</li>
+			</ul>
+		</div>
+	</footer>
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.poptrox.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+	<script src="assets/js/nav.js"></script>
+</body>
+</html>
