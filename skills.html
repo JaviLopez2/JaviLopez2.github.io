@@ -23,20 +23,32 @@
 			</button>
 		</div>
 		<div id="menu-dropdown" class="menu-dropdown-horizontal">
-			<a href="index.html">Inicio</a>
-			<a href="index.html#two">Projectos</a>
-			<a href="skills.html">Skills y herramientas</a>
-			<a href="work.html">Experiencia Profesional</a>
-			<a href="work.html#two">Formación Académica</a>
-			<a href="index.html#three">Contacto</a>
+			<a href="index.html" data-lang-es="Inicio" data-lang-en="Home">Inicio</a>
+			<a href="index.html#two" data-lang-es="Proyectos" data-lang-en="Projects">Proyectos</a>
+			<a href="skills.html" data-lang-es="Skills y herramientas" data-lang-en="Skills & Tools">Skills y herramientas</a>
+			<a href="work.html" data-lang-es="Experiencia Profesional" data-lang-en="Professional Experience">Experiencia Profesional</a>
+			<a href="work.html#two" data-lang-es="Formación Académica" data-lang-en="Education">Formación Académica</a>
+			<a href="index.html#three" data-lang-es="Contacto" data-lang-en="Contact">Contacto</a>
 		</div>
 	</nav>
 
 	<!-- Header -->
 	<header id="header">
+		<div class="locate">
+			<div class="language-switch-container">
+				<div class="language-switch">
+					<span id="lang-label">ES</span>
+					<label class="switch">
+						<input type="checkbox" id="lang-toggle">
+						<span class="slider round"></span>
+					</label>
+				</div>
+			</div>
+		</div>
 		<div class="inner">
 			<a href="index.html" class="image avatar"><img src="images/perfil.jpg" alt="Javier López" /></a>
-			<h1>
+			<h1 data-lang-es="<strong>Javier López</strong><br />Game Developer & Technical Artist<br /><span style='font-size: 0.7em; font-weight: 300;'>Especializado en desarrollo de gameplay, programación de sistemas y optimización técnica</span>"
+				data-lang-en="<strong>Javier López</strong><br />Game Developer & Technical Artist<br /><span style='font-size: 0.7em; font-weight: 300;'>Specialized in gameplay development, systems programming, and technical optimization</span>">
 				<strong>Javier López</strong><br />
 				Game Developer & Technical Artist<br />
 				<span style="font-size: 0.7em; font-weight: 300;">Especializado en desarrollo de gameplay, programación de sistemas y optimización técnica</span>
@@ -48,10 +60,10 @@
 	<div id="main">
 		<section id="skills">
 			<header class="major">
-				<h2>Skills y Herramientas</h2>
+				<h2 data-lang-es="Skills y Herramientas" data-lang-en="Skills & Tools" >Skills y Herramientas</h2>
 			</header>
 			<div class="option">
-				<h2 class="option-title">Skills Assessment Dashboard</h2>
+				<h2 class="option-title" data-lang-es="Panel de evaluación de habilidades" data-lang-en="Skills Assessment Dashboard">Panel de evaluación de habilidades</h2>
 				<div class="radar-container">
 					<!-- Programming -->
 					<div class="radar-skill">
