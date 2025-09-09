@@ -95,7 +95,7 @@
 
 		<!-- Two -->
 		<section id="two">
-			<h2>Portfolio de Proyectos</h2>
+			<h2 data-lang-es="Portfolio de Proyectos" data-lang-en="Project Portfolio">Portofolio de Proyectos</h2>
 			<div class="row">
 				<!-- BRICKSOLVE -->
 				<article class="col-6 col-12-xsmall work-item">
@@ -264,26 +264,45 @@
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
 	<script src="assets/js/nav.js"></script>
+	<script src="assets/js/lang.js"></script>
 	<script>
 		const toggle = document.getElementById('lang-toggle');
 		const label = document.getElementById('lang-label');
 		const elements = document.querySelectorAll('[data-lang-es]');
 
+		// 1. Leer idioma guardado y actualizar la UI al cargar la página
+		document.addEventListener('DOMContentLoaded', () => {
+			const savedLang = localStorage.getItem('site-lang') || 'es';
+			toggle.checked = savedLang === 'en';
+			label.textContent = savedLang.toUpperCase();
+
+			elements.forEach(el => {
+				const langValue = el.getAttribute(`data-lang-${savedLang}`);
+				if (el.tagName === 'TEXTAREA' || (el.tagName === 'INPUT' && (el.type === 'text' || el.type === 'email'))) {
+					el.placeholder = langValue;
+				} else if (el.tagName === 'INPUT' && (el.type === 'submit' || el.type === 'reset')) {
+					el.value = langValue;
+				} else {
+					el.innerHTML = langValue;
+				}
+			});
+		});
+		// 2. Guardar idioma cuando el usuario cambia el switch
 		toggle.addEventListener('change', () => {
 			const lang = toggle.checked ? 'en' : 'es';
 			label.textContent = lang.toUpperCase();
+			localStorage.setItem('site-lang', lang);
 
-            elements.forEach(el => {
-                const langValue = el.getAttribute(`data-lang-${lang}`);
-
-                if (el.tagName === 'TEXTAREA' || (el.tagName === 'INPUT' && (el.type === 'text' || el.type === 'email'))) {
-                    el.placeholder = langValue;  // texto y textarea
-                } else if (el.tagName === 'INPUT' && (el.type === 'submit' || el.type === 'reset')) {
-                    el.value = langValue;        // botones
-                } else {
-                    el.innerHTML = langValue;    // otros elementos
-                }
-            });
+			elements.forEach(el => {
+				const langValue = el.getAttribute(`data-lang-${lang}`);
+				if (el.tagName === 'TEXTAREA' || (el.tagName === 'INPUT' && (el.type === 'text' || el.type === 'email'))) {
+					el.placeholder = langValue;
+				} else if (el.tagName === 'INPUT' && (el.type === 'submit' || el.type === 'reset')) {
+					el.value = langValue;
+				} else {
+					el.innerHTML = langValue;
+				}
+			});
 		});
 	</script>
 
