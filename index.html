@@ -231,24 +231,44 @@
     .project-gallery picture { display: block; min-width: 0; min-height: 0; height: 100%; }
     .project-gallery .gallery-link { cursor: zoom-in; }
     .project-gallery img { width: 100%; height: 100%; border: 1px solid rgba(32,39,36,.32); background: #242424; object-fit: contain; }
-    .project-gallery--ndp { grid-template-columns: 1.25fr .75fr .75fr; }
-    .project-gallery--ndp img { object-position: center; }
     .project-visual--penon { padding: .7rem; background: repeating-linear-gradient(135deg, transparent 0 17px, rgba(49,93,100,.12) 17px 18px), #e4e1d7; }
     .project-gallery--penon { grid-template-columns: 1.55fr .8fr; grid-template-rows: 1fr 1fr; }
     .project-gallery--penon picture:first-child { grid-row: 1 / -1; }
     .project-gallery--penon img { object-fit: contain; }
-    .project-visual--fauna { background: #d9e0db; }
-    .project-visual--fauna picture,
-    .project-visual--fauna picture img { width: 100%; height: 100%; }
-    .project-visual--fauna picture img { min-height: 190px; object-fit: cover; filter: saturate(.78); transition: transform .35s ease; }
-    .project:hover .project-visual--fauna picture img { transform: scale(1.035); }
-    .fauna-logo { position: absolute; right: 1rem; bottom: 1rem; z-index: 1; width: 86px !important; height: auto !important; min-height: 0 !important; padding: .35rem !important; border: 1px solid rgba(32,39,36,.28); background: rgba(241,238,231,.88); object-fit: contain !important; }
-    .visual-credit { position: absolute; left: .9rem; bottom: .7rem; z-index: 1; color: var(--ink); font-family: var(--mono); font-size: .58rem; letter-spacing: .03em; text-transform: uppercase; }
+    .project-carousel { position: relative; z-index: 1; display: grid; grid-template-rows: minmax(0, 1fr) auto; width: 100%; height: 100%; min-height: 0; gap: .6rem; }
+    .carousel-viewport { position: relative; min-width: 0; min-height: 0; overflow: hidden; border: 1px solid rgba(32,39,36,.32); background: #242424; }
+    .carousel-track { display: flex; width: 100%; height: 100%; transition: transform .28s ease; }
+    .carousel-slide { flex: 0 0 100%; min-width: 0; height: 100%; margin: 0; }
+    .carousel-slide[aria-hidden="true"] { visibility: hidden; }
+    .carousel-slide .gallery-link,
+    .carousel-slide picture,
+    .carousel-slide img { display: block; width: 100%; height: 100%; }
+    .carousel-slide .gallery-link { cursor: zoom-in; }
+    .carousel-slide img { border: 0; background: #242424; object-fit: contain; }
+    .carousel-slide--cover img { object-fit: cover; }
+    .carousel-controls { display: flex; align-items: center; justify-content: space-between; gap: .7rem; min-height: 1.8rem; }
+    .carousel-button, .carousel-dot { border: 1px solid var(--line-dark); background: var(--paper-light); color: var(--red-dark); font-family: var(--mono); font-weight: 700; cursor: pointer; }
+    .carousel-button { display: grid; place-items: center; width: 2rem; height: 2rem; padding: 0; font-size: 1rem; line-height: 1; }
+    .carousel-button:hover, .carousel-button:focus-visible, .carousel-dot:hover, .carousel-dot:focus-visible { border-color: var(--red); background: var(--red); color: var(--paper); }
+    .carousel-button:disabled { opacity: .35; cursor: default; }
+    .carousel-status { min-width: 7rem; color: var(--muted); font-family: var(--mono); font-size: .6rem; letter-spacing: .05em; text-align: center; text-transform: uppercase; }
+    .carousel-dots { display: flex; justify-content: center; gap: .3rem; margin-top: .15rem; }
+    .carousel-dot { width: .45rem; height: .45rem; padding: 0; border-radius: 50%; }
+    .carousel-dot[aria-current="true"] { border-color: var(--red); background: var(--red); }
+    .project-visual--ndp { padding: .7rem; background: #d7d0c3; }
+    .project-visual--fauna { padding: .7rem; background: #d9e0db; }
+    .project-visual--fauna .carousel-slide img { filter: saturate(.78); }
+    .project-visual--fauna .carousel-slide--cover img { object-position: center; }
+    .fauna-logo { position: absolute; right: 1rem; bottom: 2.8rem; z-index: 2; width: 86px !important; height: auto !important; min-height: 0 !important; padding: .35rem !important; border: 1px solid rgba(32,39,36,.28); background: rgba(241,238,231,.88); object-fit: contain !important; }
+    .visual-credit { position: absolute; left: .9rem; bottom: 2.8rem; z-index: 2; color: var(--ink); font-family: var(--mono); font-size: .58rem; letter-spacing: .03em; text-transform: uppercase; }
+    .carousel-credit { position: absolute; right: 1rem; bottom: .65rem; z-index: 2; color: var(--muted); font-family: var(--mono); font-size: .55rem; text-transform: uppercase; }
     .project-systems { display: flex; flex-wrap: wrap; gap: .35rem .8rem; margin: .85rem 0 0; padding: .65rem 0 0; border-top: 1px solid var(--line); color: var(--ink); font-family: var(--mono); font-size: .64rem; letter-spacing: .03em; text-transform: uppercase; }
     .project-systems span::before { content: "＋"; color: var(--red); }
-    .project-visual--pompeii { display: grid; place-items: center; background: #e8dfd0; }
-    .project-visual--pompeii::before { content: ""; position: absolute; width: 60%; height: 62%; border: 1px solid var(--ochre); background: repeating-linear-gradient(0deg, transparent 0 13px, rgba(189,138,47,.2) 13px 14px); }
-    .project-visual--pompeii .visual-slot { position: relative; z-index: 1; color: var(--ochre); font-family: var(--serif); font-size: clamp(1.7rem, 4vw, 3.2rem); line-height: .9; text-align: center; }
+    .project-visual--pompeii { padding: .7rem; background: #e8dfd0; }
+    .project-visual--pompeii .carousel-slide img { object-position: center; }
+    .project-visual--pompeii .carousel-slide--cover img { object-fit: cover; }
+    .project-visual--pompeii .carousel-button { border-color: rgba(189,138,47,.65); color: #80621f; }
+    .project-visual--pompeii .carousel-button:hover, .project-visual--pompeii .carousel-button:focus-visible { background: var(--ochre); color: var(--paper); }
     .project-title { grid-area: title; display: flex; flex-direction: column; gap: .35rem; min-width: 0; }
     .project-title h3 { font-size: clamp(1.45rem, 3vw, 2.5rem); overflow-wrap: anywhere; }
     .project-state { color: var(--muted); font-family: var(--mono); font-size: .68rem; letter-spacing: .04em; text-transform: uppercase; }
@@ -347,8 +367,9 @@
       .project, .project--featured, .project:nth-child(2), .project:nth-child(3), .project:nth-child(4) { display: grid; grid-template-columns: 38px minmax(0, 1fr); grid-template-areas: "no visual" "no title" "no copy" "no meta"; margin-bottom: 1.5rem; }
       .project:hover { transform: none; }
       .project-visual, .project--featured .project-visual, .project:nth-child(4) .project-visual { min-height: 190px; }
-      .project-gallery--ndp { grid-template-columns: 1.15fr .85fr; grid-template-rows: 1fr 1fr; }
-      .project-gallery--ndp .gallery-link:first-child { grid-row: 1 / -1; }
+      .project-carousel { gap: .45rem; }
+      .carousel-status { min-width: 6rem; font-size: .56rem; }
+      .carousel-button { width: 1.85rem; height: 1.85rem; }
       .project-copy { font-size: .92rem; }
       .project-meta { gap: .45rem .9rem; }
       .about-grid { grid-template-columns: 1fr; gap: 2rem; }
@@ -445,26 +466,29 @@
       <div class="work-list">
         <article class="project project--featured">
           <div class="project-no">01</div>
-          <div class="project-visual project-visual--ndp" role="group" aria-label="Imágenes de Nada de Pensar: partida, mazos temáticos y respuestas únicas">
-            <div class="project-gallery project-gallery--ndp">
-              <a class="gallery-link" href="assets/ndp-01-respuesta.png" target="_blank" rel="noopener noreferrer" aria-label="Ampliar captura principal de Nada de Pensar (se abre en una pestaña nueva)">
-                <picture>
-                  <source srcset="assets/ndp-01-respuesta.webp" type="image/webp" />
-                  <img src="assets/ndp-01-respuesta.png" alt="Nada de Pensar: partida en curso con selección de respuesta" width="347" height="491" loading="eager" />
-                </picture>
-              </a>
-              <a class="gallery-link" href="assets/ndp-02-mazos.png" target="_blank" rel="noopener noreferrer" aria-label="Ampliar captura de mazos temáticos de Nada de Pensar (se abre en una pestaña nueva)">
-                <picture>
-                  <source srcset="assets/ndp-02-mazos.webp" type="image/webp" />
-                  <img src="assets/ndp-02-mazos.png" alt="Nada de Pensar: pantalla de selección de mazos temáticos" width="347" height="491" loading="lazy" />
-                </picture>
-              </a>
-              <a class="gallery-link" href="assets/ndp-03-unicas.png" target="_blank" rel="noopener noreferrer" aria-label="Ampliar captura de respuestas únicas de Nada de Pensar (se abre en una pestaña nueva)">
-                <picture>
-                  <source srcset="assets/ndp-03-unicas.webp" type="image/webp" />
-                  <img src="assets/ndp-03-unicas.png" alt="Nada de Pensar: ronda con cartas y respuestas únicas" width="347" height="491" loading="lazy" />
-                </picture>
-              </a>
+          <div class="project-visual project-visual--ndp" role="group" aria-label="Carrusel de Nada de Pensar: partida, mazos temáticos y respuestas únicas">
+            <div class="project-carousel" data-carousel data-carousel-name="Nada de Pensar" aria-label="Galería de Nada de Pensar">
+              <div class="carousel-viewport">
+                <div class="carousel-track">
+                  <figure class="carousel-slide">
+                    <a class="gallery-link" href="assets/ndp-01-respuesta.png" target="_blank" rel="noopener noreferrer" aria-label="Ampliar captura principal de Nada de Pensar (se abre en una pestaña nueva)">
+                      <picture><source srcset="assets/ndp-01-respuesta.webp" type="image/webp" /><img src="assets/ndp-01-respuesta.png" alt="Nada de Pensar: partida en curso con selección de respuesta" width="347" height="491" loading="eager" /></picture>
+                    </a>
+                  </figure>
+                  <figure class="carousel-slide">
+                    <a class="gallery-link" href="assets/ndp-02-mazos.png" target="_blank" rel="noopener noreferrer" aria-label="Ampliar captura de mazos temáticos de Nada de Pensar (se abre en una pestaña nueva)">
+                      <picture><source srcset="assets/ndp-02-mazos.webp" type="image/webp" /><img src="assets/ndp-02-mazos.png" alt="Nada de Pensar: pantalla de selección de mazos temáticos" width="347" height="491" loading="lazy" /></picture>
+                    </a>
+                  </figure>
+                  <figure class="carousel-slide">
+                    <a class="gallery-link" href="assets/ndp-03-unicas.png" target="_blank" rel="noopener noreferrer" aria-label="Ampliar captura de respuestas únicas de Nada de Pensar (se abre en una pestaña nueva)">
+                      <picture><source srcset="assets/ndp-03-unicas.webp" type="image/webp" /><img src="assets/ndp-03-unicas.png" alt="Nada de Pensar: ronda con cartas y respuestas únicas" width="347" height="491" loading="lazy" /></picture>
+                    </a>
+                  </figure>
+                </div>
+              </div>
+              <div class="carousel-controls"><button class="carousel-button" type="button" data-carousel-prev aria-label="Imagen anterior">←</button><div class="carousel-status" data-carousel-status aria-live="polite"></div><button class="carousel-button" type="button" data-carousel-next aria-label="Imagen siguiente">→</button></div>
+              <div class="carousel-dots" data-carousel-dots></div>
             </div>
           </div>
           <div class="project-title"><h3>Nada de Pensar</h3><span class="project-state">Proyecto principal · build WebGL pública</span></div>
@@ -502,11 +526,20 @@
         <article class="project">
           <div class="project-no">03</div>
           <div class="project-visual project-visual--fauna">
-            <picture>
-              <source srcset="assets/fauna-scene-01.webp" type="image/webp" />
-              <img src="assets/fauna-scene-01.png" alt="Captura de Fauna: escenario 3D del juego" width="1600" height="902" loading="lazy" />
-            </picture>
-            <img class="fauna-logo" src="assets/fauna.png" alt="" width="1920" height="1080" loading="lazy" />
+            <div class="project-carousel" data-carousel data-carousel-name="Fauna" aria-label="Galería de Fauna">
+              <div class="carousel-viewport">
+                <div class="carousel-track">
+                  <figure class="carousel-slide carousel-slide--cover"><a class="gallery-link" href="assets/fauna-cover.png" target="_blank" rel="noopener noreferrer" aria-label="Ampliar portada oficial de Fauna (se abre en una pestaña nueva)"><picture><source srcset="assets/fauna-cover.webp" type="image/webp" /><img src="assets/fauna-cover.png" alt="Fauna: portada oficial del juego" width="960" height="540" loading="lazy" /></picture></a></figure>
+                  <figure class="carousel-slide"><a class="gallery-link" href="assets/fauna-01.png" target="_blank" rel="noopener noreferrer" aria-label="Ampliar captura oficial de Fauna (se abre en una pestaña nueva)"><picture><source srcset="assets/fauna-01.webp" type="image/webp" /><img src="assets/fauna-01.png" alt="Fauna: escenario 3D con el robot y fauna del juego" width="1920" height="1080" loading="lazy" /></picture></a></figure>
+                  <figure class="carousel-slide"><a class="gallery-link" href="assets/fauna-02.png" target="_blank" rel="noopener noreferrer" aria-label="Ampliar captura oficial de Fauna (se abre en una pestaña nueva)"><picture><source srcset="assets/fauna-02.webp" type="image/webp" /><img src="assets/fauna-02.png" alt="Fauna: exploración de un entorno 3D" width="1920" height="1080" loading="lazy" /></picture></a></figure>
+                  <figure class="carousel-slide"><a class="gallery-link" href="assets/fauna-03.png" target="_blank" rel="noopener noreferrer" aria-label="Ampliar captura oficial de Fauna (se abre en una pestaña nueva)"><picture><source srcset="assets/fauna-03.webp" type="image/webp" /><img src="assets/fauna-03.png" alt="Fauna: escena de plataformas y exploración" width="1920" height="1080" loading="lazy" /></picture></a></figure>
+                  <figure class="carousel-slide"><a class="gallery-link" href="assets/fauna-04.png" target="_blank" rel="noopener noreferrer" aria-label="Ampliar captura oficial de Fauna (se abre en una pestaña nueva)"><picture><source srcset="assets/fauna-04.webp" type="image/webp" /><img src="assets/fauna-04.png" alt="Fauna: encuentro en el entorno del juego" width="1920" height="1080" loading="lazy" /></picture></a></figure>
+                  <figure class="carousel-slide carousel-slide--cover"><a class="gallery-link" href="https://www.youtube.com/watch?v=ro_a5QBVG4M" target="_blank" rel="noopener noreferrer" aria-label="Ver el tráiler oficial de Fauna en YouTube (se abre en una pestaña nueva)"><picture><source srcset="assets/fauna-trailer.webp" type="image/webp" /><img src="assets/fauna-trailer.jpg" alt="Miniatura del tráiler oficial de Fauna; abrir en YouTube" width="1280" height="720" loading="lazy" /></picture></a></figure>
+                </div>
+              </div>
+              <div class="carousel-controls"><button class="carousel-button" type="button" data-carousel-prev aria-label="Imagen anterior">←</button><div class="carousel-status" data-carousel-status aria-live="polite"></div><button class="carousel-button" type="button" data-carousel-next aria-label="Imagen siguiente">→</button></div>
+              <div class="carousel-dots" data-carousel-dots></div>
+            </div>
             <span class="visual-credit">Fauna · FairyGames / JaviLopez2</span>
           </div>
           <div class="project-title"><h3>Fauna</h3><span class="project-state">Coautoría · en desarrollo</span></div>
@@ -515,8 +548,19 @@
         </article>
         <article class="project">
           <div class="project-no">04</div>
-          <div class="project-visual project-visual--pompeii" role="img" aria-label="Composición visual de Pompeii The Last Tavern: taberna y erupción">
-            <span class="visual-slot">Taberna<br />y erupción</span>
+          <div class="project-visual project-visual--pompeii" role="group" aria-label="Carrusel de Pompeii The Last Tavern: portada y capturas del juego">
+            <div class="project-carousel" data-carousel data-carousel-name="Pompeii The Last Tavern" aria-label="Galería de Pompeii The Last Tavern">
+              <div class="carousel-viewport">
+                <div class="carousel-track">
+                  <figure class="carousel-slide carousel-slide--cover"><a class="gallery-link" href="assets/pompeii-cover.png" target="_blank" rel="noopener noreferrer" aria-label="Ampliar portada oficial de Pompeii The Last Tavern (se abre en una pestaña nueva)"><picture><source srcset="assets/pompeii-cover.webp" type="image/webp" /><img src="assets/pompeii-cover.png" alt="Pompeii The Last Tavern: portada oficial" width="1920" height="1080" loading="lazy" /></picture></a></figure>
+                  <figure class="carousel-slide"><a class="gallery-link" href="assets/pompeii-01.png" target="_blank" rel="noopener noreferrer" aria-label="Ampliar captura oficial de Pompeii The Last Tavern (se abre en una pestaña nueva)"><picture><source srcset="assets/pompeii-01.webp" type="image/webp" /><img src="assets/pompeii-01.png" alt="Pompeii The Last Tavern: taberna, erupción y gestión de la partida" width="1920" height="1080" loading="lazy" /></picture></a></figure>
+                  <figure class="carousel-slide"><a class="gallery-link" href="assets/pompeii-02.png" target="_blank" rel="noopener noreferrer" aria-label="Ampliar segunda captura oficial de Pompeii The Last Tavern (se abre en una pestaña nueva)"><picture><source srcset="assets/pompeii-02.webp" type="image/webp" /><img src="assets/pompeii-02.png" alt="Pompeii The Last Tavern: pantalla de cierre de la partida" width="1920" height="1080" loading="lazy" /></picture></a></figure>
+                </div>
+              </div>
+              <div class="carousel-controls"><button class="carousel-button" type="button" data-carousel-prev aria-label="Imagen anterior">←</button><div class="carousel-status" data-carousel-status aria-live="polite"></div><button class="carousel-button" type="button" data-carousel-next aria-label="Imagen siguiente">→</button></div>
+              <div class="carousel-dots" data-carousel-dots></div>
+            </div>
+            <span class="carousel-credit">itch.io · JaviLopez2</span>
           </div>
           <div class="project-title"><h3>Pompeii | The Last Tavern</h3><span class="project-state">Jam de 3 días · publicado</span></div>
           <div class="project-copy"><p>Gestiona la última taberna de Pompeya mientras el Vesubio entra en erupción. Incendios, rocas, humo y un cliente que no se va.</p></div>
@@ -700,15 +744,20 @@
       '.brand': { 'aria-label': 'Javier López, home' },
       '.hero-index': { 'aria-label': 'Current project file' },
       '.register': { 'aria-label': 'Work areas' },
-      '.project:nth-child(1) .project-visual': { 'aria-label': 'Nada de Pensar images: game, themed decks and unique answers' },
-      '.project:nth-child(1) .gallery-link:nth-child(1)': { 'aria-label': 'Enlarge main Nada de Pensar screenshot (opens in a new tab)' },
-      '.project:nth-child(1) .gallery-link:nth-child(2)': { 'aria-label': 'Enlarge Nada de Pensar themed decks screenshot (opens in a new tab)' },
-      '.project:nth-child(1) .gallery-link:nth-child(3)': { 'aria-label': 'Enlarge Nada de Pensar unique answers screenshot (opens in a new tab)' },
+      '.project:nth-child(1) .project-visual': { 'aria-label': 'Nada de Pensar carousel: game, themed decks and unique answers' },
+      '.project:nth-child(1) .project-carousel': { 'aria-label': 'Nada de Pensar gallery' },
+      '.project:nth-child(1) .carousel-slide:nth-child(1) .gallery-link': { 'aria-label': 'Enlarge main Nada de Pensar screenshot (opens in a new tab)' },
+      '.project:nth-child(1) .carousel-slide:nth-child(2) .gallery-link': { 'aria-label': 'Enlarge Nada de Pensar themed decks screenshot (opens in a new tab)' },
+      '.project:nth-child(1) .carousel-slide:nth-child(3) .gallery-link': { 'aria-label': 'Enlarge Nada de Pensar unique answers screenshot (opens in a new tab)' },
       '.project:nth-child(2) .project-visual': { 'aria-label': 'Peñón del Sur images: gameplay, environment and upgrade shop' },
-      '.project:nth-child(2) .gallery-link:nth-child(1)': { 'aria-label': 'Enlarge Peñón del Sur HUD screenshot (opens in a new tab)' },
-      '.project:nth-child(2) .gallery-link:nth-child(2)': { 'aria-label': 'Enlarge Peñón del Sur environment screenshot (opens in a new tab)' },
-      '.project:nth-child(2) .gallery-link:nth-child(3)': { 'aria-label': 'Enlarge Peñón del Sur shop screenshot (opens in a new tab)' },
-      '.project:nth-child(4) .project-visual': { 'aria-label': 'Visual composition of Pompeii The Last Tavern: tavern and eruption' },
+      '.project:nth-child(2) .project-gallery--penon .gallery-link:nth-child(1)': { 'aria-label': 'Enlarge Peñón del Sur HUD screenshot (opens in a new tab)' },
+      '.project:nth-child(2) .project-gallery--penon .gallery-link:nth-child(2)': { 'aria-label': 'Enlarge Peñón del Sur environment screenshot (opens in a new tab)' },
+      '.project:nth-child(2) .project-gallery--penon .gallery-link:nth-child(3)': { 'aria-label': 'Enlarge Peñón del Sur shop screenshot (opens in a new tab)' },
+      '.project:nth-child(3) .project-carousel': { 'aria-label': 'Fauna gallery' },
+      '.project:nth-child(4) .project-visual': { 'aria-label': 'Pompeii The Last Tavern carousel: cover and game captures' },
+      '.project:nth-child(4) .project-carousel': { 'aria-label': 'Pompeii The Last Tavern gallery' },
+      '.project:nth-child(1) [data-carousel-prev], .project:nth-child(3) [data-carousel-prev], .project:nth-child(4) [data-carousel-prev]': { 'aria-label': 'Previous image' },
+      '.project:nth-child(1) [data-carousel-next], .project:nth-child(3) [data-carousel-next], .project:nth-child(4) [data-carousel-next]': { 'aria-label': 'Next image' },
       '.case-sheet': { 'aria-label': 'Technical summary of the Nada de Pensar build' },
       '.project:nth-child(1) img:nth-of-type(1)': { alt: 'Nada de Pensar: game in progress with answer selection' },
       '.project:nth-child(1) img:nth-of-type(2)': { alt: 'Nada de Pensar: themed deck selection screen' },
@@ -716,8 +765,77 @@
       '.project:nth-child(2) img:nth-of-type(1)': { alt: 'Peñón del Sur: gameplay with objective, suspicion, inventory and advanced theft HUD' },
       '.project:nth-child(2) img:nth-of-type(2)': { alt: "Peñón del Sur: character in the game's tourist setting" },
       '.project:nth-child(2) img:nth-of-type(3)': { alt: 'Peñón del Sur: upgrade shop and progression' },
-      '.project:nth-child(3) picture img': { alt: 'Fauna: 3D game environment screenshot' },
+      '.project:nth-child(3) .carousel-slide:nth-child(1) img': { alt: 'Fauna: official game cover' },
+      '.project:nth-child(3) .carousel-slide:nth-child(2) img': { alt: 'Fauna: 3D setting with the robot and game fauna' },
+      '.project:nth-child(3) .carousel-slide:nth-child(3) img': { alt: 'Fauna: exploration of a 3D environment' },
+      '.project:nth-child(3) .carousel-slide:nth-child(4) img': { alt: 'Fauna: platforming and exploration scene' },
+      '.project:nth-child(3) .carousel-slide:nth-child(5) img': { alt: 'Fauna: encounter in the game environment' },
+      '.project:nth-child(3) .carousel-slide:nth-child(6) img': { alt: 'Fauna official trailer thumbnail; opens on YouTube' },
+      '.project:nth-child(4) .carousel-slide:nth-child(1) img': { alt: 'Pompeii The Last Tavern: official cover' },
+      '.project:nth-child(4) .carousel-slide:nth-child(2) img': { alt: 'Pompeii The Last Tavern: tavern, eruption and game management' },
+      '.project:nth-child(4) .carousel-slide:nth-child(3) img': { alt: 'Pompeii The Last Tavern: end-of-game screen' },
       '.portrait-frame img': { alt: 'Portrait of Javier López' }
+    };
+    const updateCarouselLanguage = (english) => {
+      document.querySelectorAll('[data-carousel]').forEach((carousel) => {
+        const name = carousel.dataset.carouselName || 'project';
+        const slides = carousel.querySelectorAll('.carousel-slide');
+        const status = carousel.querySelector('[data-carousel-status]');
+        const prev = carousel.querySelector('[data-carousel-prev]');
+        const next = carousel.querySelector('[data-carousel-next]');
+        if (status) status.textContent = `${english ? 'Image' : 'Imagen'} ${Number(carousel.dataset.carouselIndex || 0) + 1} ${english ? 'of' : 'de'} ${slides.length}`;
+        if (prev) prev.setAttribute('aria-label', english ? 'Previous image' : 'Imagen anterior');
+        if (next) next.setAttribute('aria-label', english ? 'Next image' : 'Imagen siguiente');
+        carousel.querySelectorAll('.carousel-dot').forEach((dot, index) => {
+          dot.setAttribute('aria-label', `${english ? 'Go to image' : 'Ir a la imagen'} ${index + 1} ${english ? 'of' : 'de'} ${slides.length} · ${name}`);
+        });
+      });
+    };
+    const initCarousel = (carousel) => {
+      const track = carousel.querySelector('.carousel-track');
+      const slides = Array.from(carousel.querySelectorAll('.carousel-slide'));
+      const prev = carousel.querySelector('[data-carousel-prev]');
+      const next = carousel.querySelector('[data-carousel-next]');
+      const status = carousel.querySelector('[data-carousel-status]');
+      const dots = carousel.querySelector('[data-carousel-dots]');
+      if (!track || !slides.length) return;
+      let index = 0;
+      let touchStart = 0;
+      slides.forEach((slide, slideIndex) => {
+        slide.setAttribute('aria-hidden', slideIndex === 0 ? 'false' : 'true');
+        const dot = document.createElement('button');
+        dot.type = 'button'; dot.className = 'carousel-dot'; dot.dataset.carouselDot = String(slideIndex);
+        dot.setAttribute('aria-current', slideIndex === 0 ? 'true' : 'false');
+        dots.appendChild(dot);
+        dot.addEventListener('click', () => goTo(slideIndex));
+      });
+      if (slides.length < 2) { carousel.querySelector('.carousel-controls').hidden = true; dots.hidden = true; }
+      const goTo = (nextIndex) => {
+        index = (nextIndex + slides.length) % slides.length;
+        carousel.dataset.carouselIndex = String(index);
+        track.style.transform = `translateX(-${index * 100}%)`;
+        slides.forEach((slide, slideIndex) => {
+          const active = slideIndex === index;
+          slide.setAttribute('aria-hidden', String(!active));
+          slide.querySelectorAll('a').forEach((link) => link.tabIndex = active ? 0 : -1);
+        });
+        carousel.querySelectorAll('.carousel-dot').forEach((dot, dotIndex) => dot.setAttribute('aria-current', String(dotIndex === index)));
+        updateCarouselLanguage(document.documentElement.lang === 'en');
+      };
+      prev.addEventListener('click', () => goTo(index - 1));
+      next.addEventListener('click', () => goTo(index + 1));
+      carousel.addEventListener('keydown', (event) => {
+        if (event.key === 'ArrowLeft') { event.preventDefault(); goTo(index - 1); }
+        if (event.key === 'ArrowRight') { event.preventDefault(); goTo(index + 1); }
+        if (event.key === 'Home') { event.preventDefault(); goTo(0); }
+        if (event.key === 'End') { event.preventDefault(); goTo(slides.length - 1); }
+      });
+      carousel.addEventListener('touchstart', (event) => { touchStart = event.changedTouches[0].clientX; }, { passive: true });
+      carousel.addEventListener('touchend', (event) => {
+        const distance = event.changedTouches[0].clientX - touchStart;
+        if (Math.abs(distance) > 40) goTo(index + (distance < 0 ? 1 : -1));
+      }, { passive: true });
+      goTo(0);
     };
     const spanish = new Map();
     const originalAttributes = new Map();
@@ -756,9 +874,11 @@
           });
         });
       });
+      updateCarouselLanguage(english);
       document.querySelectorAll('[data-language]').forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.language === language)));
       try { localStorage.setItem('portfolio-language', language); } catch (error) {}
     };
+    document.querySelectorAll('[data-carousel]').forEach(initCarousel);
     document.querySelectorAll('[data-language]').forEach((button) => button.addEventListener('click', () => setLanguage(button.dataset.language)));
     let preferredLanguage = 'es';
     try { preferredLanguage = localStorage.getItem('portfolio-language') || 'es'; } catch (error) {}
