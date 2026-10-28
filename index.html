@@ -1,293 +1,768 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<meta name="description" content="Javier López es un desarrollador de videojuegos y artista técnico con experiencia en desarrollo de gameplay, programación de sistemas y optimización técnica.">
-	<title>Javier López - Game Developer & Technical Artist</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Portfolio de Javier López, Gameplay Programmer especializado en Unity y C#, gameplay y sistemas de juego." />
+  <meta name="author" content="Javier López" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://javilopez2.github.io/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://javilopez2.github.io/" />
+  <meta property="og:site_name" content="Javier López" />
+  <meta property="og:title" content="Javier López — Gameplay Programmer" />
+  <meta property="og:description" content="Portfolio de Javier López: gameplay, sistemas de juego y decisiones técnicas en Unity." />
+  <meta property="og:image" content="https://javilopez2.github.io/og-portfolio.png" />
+  <meta property="og:image:alt" content="Portfolio de Javier López — Gameplay Programmer" />
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Javier López — Gameplay Programmer" />
+  <meta name="twitter:description" content="Gameplay, sistemas de juego y decisiones técnicas en Unity." />
+  <meta name="twitter:image" content="https://javilopez2.github.io/og-portfolio.png" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Javier López","jobTitle":"Gameplay Programmer / Unity Developer","url":"https://javilopez2.github.io/","sameAs":["https://github.com/JaviLopez2","https://javilopez2.itch.io"]}</script>
+  <title>Javier López — Gameplay Programmer</title>
+  <style>
+    :root {
+      --paper: #f1eee7;
+      --paper-deep: #e5e0d6;
+      --paper-light: #faf8f3;
+      --ink: #202724;
+      --muted: #505b55;
+      --line: #c3beb2;
+      --line-dark: #9c9b91;
+      --red: #b64d3b;
+      --red-dark: #87392e;
+      --ochre: #bd8a2f;
+      --blue: #315d64;
+      --max: 1160px;
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: "Arial Narrow", "Aptos Narrow", "Segoe UI", sans-serif;
+      --mono: "Cascadia Code", Consolas, monospace;
+    }
 
-	<link rel="canonical" href="https://javilopez2.github.io/">
-	<meta name="theme-color" content="#0d0d0d">
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    section[id] { scroll-margin-top: 7rem; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background-color: var(--paper);
+      background-image:
+        repeating-linear-gradient(0deg, rgba(32,39,36,.018) 0, rgba(32,39,36,.018) 1px, transparent 1px, transparent 5px),
+        repeating-linear-gradient(90deg, rgba(255,255,255,.18) 0, rgba(255,255,255,.18) 1px, transparent 1px, transparent 7px);
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    a { color: inherit; }
+    img { display: block; max-width: 100%; }
+    :focus-visible { outline: 3px solid var(--red); outline-offset: 4px; }
+    .skip-link {
+      position: absolute;
+      top: -4rem;
+      left: 1rem;
+      z-index: 20;
+      padding: .65rem .85rem;
+      background: var(--ink);
+      color: var(--paper-light);
+      font-weight: 700;
+    }
+    .skip-link:focus { top: 1rem; }
+    .wrap { width: min(calc(100% - 3rem), var(--max)); margin-inline: auto; }
 
-	<!-- Open Graph -->
-	<meta property="og:type" content="website">
-	<meta property="og:site_name" content="Javier López">
-	<meta property="og:url" content="https://javilopez2.github.io/">
-	<meta property="og:title" content="Javier López - Game Developer & Technical Artist">
-	<meta property="og:description" content="Javier López es un desarrollador de videojuegos y artista técnico con experiencia en desarrollo de gameplay, programación de sistemas y optimización técnica.">
-	<meta property="og:image" content="images/avatar.jpg">
-	<meta property="og:locale" content="es_ES">
-	<meta property="og:locale:alternate" content="en_US">
+    .draft-bar {
+      border-bottom: 1px solid var(--ink);
+      background: var(--red);
+      color: #fffaf1;
+      padding: .42rem 1rem;
+      text-align: center;
+      font-family: var(--mono);
+      font-size: .68rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid var(--ink);
+      background: rgba(241,238,231,.94);
+    }
+    .header-inner {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 1.5rem;
+      min-height: 68px;
+    }
+    .brand { display: inline-flex; align-items: baseline; gap: .75rem; text-decoration: none; }
+    .brand-mark {
+      color: var(--red);
+      font-family: var(--serif);
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: -.08em;
+    }
+    .brand-name { font-family: var(--serif); font-size: 1.05rem; font-weight: 700; }
+    .brand-note { color: var(--muted); font-family: var(--mono); font-size: .62rem; letter-spacing: .06em; text-transform: uppercase; }
+    .nav-wrap { display: contents; }
+    .site-nav { display: flex; justify-content: center; gap: 1.4rem; color: var(--muted); font-family: var(--mono); font-size: .7rem; text-transform: uppercase; letter-spacing: .06em; }
+    .site-nav a { text-decoration: none; }
+    .nav-scroll-hint { display: none; }
+    .site-nav a:hover { color: var(--red); }
+    .header-contact { color: var(--red-dark); font-family: var(--mono); font-size: .7rem; font-weight: 700; text-decoration: none; text-transform: uppercase; }
+    .header-contact:hover { color: var(--ink); }
+    .header-tools { display: inline-flex; align-items: center; gap: .55rem; }
+    .language-switch { display: inline-flex; gap: .25rem; align-items: center; margin-left: .5rem; color: var(--muted); font-family: var(--mono); font-size: .65rem; }
+    .language-switch button { border: 0; border-bottom: 1px solid transparent; padding: .15rem .1rem; background: transparent; color: inherit; font: inherit; cursor: pointer; }
+    .language-switch button[aria-pressed="true"] { border-color: var(--red); color: var(--red-dark); font-weight: 700; }
 
-	<!-- Twitter -->
-	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:title" content="Javier López - Game Developer & Technical Artist">
-	<meta name="twitter:description" content="Javier López es un desarrollador de videojuegos y artista técnico con experiencia en desarrollo de gameplay, programación de sistemas y optimización técnica.">
-	<meta name="twitter:image" content="images/avatar.jpg">
+    .section-label {
+      display: flex;
+      align-items: center;
+      gap: .7rem;
+      margin: 0 0 1.1rem;
+      color: var(--red-dark);
+      font-family: var(--mono);
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+    .section-label::before { content: ""; width: 28px; height: 1px; background: var(--red); }
+    h1, h2, h3 { margin: 0; font-family: var(--serif); font-weight: 700; line-height: 1.02; letter-spacing: -.045em; }
+    h1 { max-width: 9ch; font-size: clamp(4.2rem, 11vw, 9.5rem); }
+    h2 { font-size: clamp(2.4rem, 6vw, 5rem); }
+    h3 { font-size: clamp(1.55rem, 3vw, 2.45rem); }
+    p { margin-top: 0; }
 
-	<link rel="preconnect" href="https://formspree.io" crossorigin>
-	<link rel="icon" type="image/png" href="images/favicon.png">
-	<link rel="stylesheet" href="assets/css/main.css" />
-	<link rel="stylesheet" href="assets/css/custom.css" />
-	<link rel="stylesheet" href="assets/css/nav.css" />
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(280px, .85fr);
+      gap: clamp(2rem, 7vw, 7rem);
+      align-items: end;
+      padding: clamp(4.5rem, 10vw, 9rem) 0 clamp(4rem, 8vw, 7rem);
+      border-bottom: 1px solid var(--ink);
+    }
+    .hero-intro { max-width: 680px; }
+    .hero-role { margin: 1.2rem 0 1rem; color: var(--red-dark); font-family: var(--mono); font-size: .82rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+    .hero-statement { max-width: 28ch; margin: 0 0 1.25rem; font-family: var(--serif); font-size: clamp(1.45rem, 3vw, 2.2rem); line-height: 1.12; }
+    .hero-copy { max-width: 52ch; color: var(--muted); font-size: 1rem; }
+    .hero-copy strong { color: var(--ink); }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.8rem; }
+    .text-link { display: inline-flex; align-items: center; gap: .4rem; border-bottom: 1px solid var(--red); padding-bottom: .15rem; color: var(--red-dark); font-family: var(--mono); font-size: .75rem; font-weight: 700; letter-spacing: .04em; text-decoration: none; text-transform: uppercase; }
+    .text-link:hover { border-color: var(--ink); color: var(--ink); }
+    .hero-index {
+      align-self: stretch;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 310px;
+      padding: 1.2rem;
+      border: 1px solid var(--line-dark);
+      background: var(--paper-light);
+    }
+    .index-top { display: flex; justify-content: space-between; gap: 1rem; color: var(--muted); font-family: var(--mono); font-size: .65rem; letter-spacing: .08em; text-transform: uppercase; }
+    .index-top strong { color: var(--red-dark); }
+    .index-mark { align-self: center; color: var(--red); font-family: var(--serif); font-size: clamp(5rem, 13vw, 9rem); line-height: .8; letter-spacing: -.15em; }
+    .index-caption { border-top: 1px solid var(--line); padding-top: .8rem; color: var(--muted); font-size: .8rem; }
+    .index-caption strong { display: block; margin-bottom: .2rem; color: var(--ink); font-family: var(--serif); font-size: 1.2rem; }
+
+    .register {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 1.5rem;
+      align-items: center;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--line-dark);
+    }
+    .register-intro { color: var(--muted); font-family: var(--mono); font-size: .68rem; letter-spacing: .05em; text-transform: uppercase; }
+    .register-list { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: .35rem 1.2rem; margin: 0; padding: 0; list-style: none; font-family: var(--serif); font-size: .95rem; }
+    .register-list li::before { content: "·"; margin-right: .4rem; color: var(--red); }
+
+    .section { padding: clamp(4.5rem, 9vw, 8rem) 0; }
+    .section-heading { display: grid; grid-template-columns: minmax(220px, .7fr) minmax(0, 1fr); gap: 2rem; align-items: end; margin-bottom: 2.4rem; }
+    .section-heading p { max-width: 48ch; margin: 0; color: var(--muted); }
+    .section-number { color: var(--red); font-family: var(--mono); font-size: .7rem; letter-spacing: .1em; }
+
+    .work-list {
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      gap: 1.25rem;
+      border-top: 1px solid var(--ink);
+      padding-top: 1.25rem;
+    }
+    .project {
+      display: grid;
+      grid-template-columns: 42px minmax(0, 1fr);
+      grid-template-areas:
+        "no visual"
+        "no title"
+        "no copy"
+        "no meta";
+      gap: 0 .9rem;
+      min-width: 0;
+      padding: 0 0 1.2rem;
+      border-bottom: 1px solid var(--line-dark);
+      transition: transform .18s ease, background .18s ease;
+    }
+    .project:hover { transform: translateY(-3px); background: rgba(255,255,255,.42); }
+    .project-no { grid-area: no; padding-top: .55rem; color: var(--red); font-family: var(--mono); font-size: .72rem; font-weight: 700; }
+    .project-visual {
+      grid-area: visual;
+      position: relative;
+      min-width: 0;
+      min-height: 190px;
+      margin-bottom: 1rem;
+      overflow: hidden;
+      border: 1px solid var(--line-dark);
+      background: var(--paper-light);
+    }
+    .project-visual::after { content: ""; position: absolute; inset: .55rem; border: 1px solid rgba(32,39,36,.18); pointer-events: none; }
+    .project-visual--ndp { padding: .7rem; background: #d7d0c3; }
+    .project-visual--ndp::before,
+    .project-visual--penon::before { display: none; }
+    .project-gallery { position: relative; z-index: 1; display: grid; width: 100%; height: 100%; min-height: 0; gap: .55rem; }
+    .project-gallery .gallery-link,
+    .project-gallery picture { display: block; min-width: 0; min-height: 0; height: 100%; }
+    .project-gallery .gallery-link { cursor: zoom-in; }
+    .project-gallery img { width: 100%; height: 100%; border: 1px solid rgba(32,39,36,.32); background: #242424; object-fit: contain; }
+    .project-gallery--ndp { grid-template-columns: 1.25fr .75fr .75fr; }
+    .project-gallery--ndp img { object-position: center; }
+    .project-visual--penon { padding: .7rem; background: repeating-linear-gradient(135deg, transparent 0 17px, rgba(49,93,100,.12) 17px 18px), #e4e1d7; }
+    .project-gallery--penon { grid-template-columns: 1.55fr .8fr; grid-template-rows: 1fr 1fr; }
+    .project-gallery--penon picture:first-child { grid-row: 1 / -1; }
+    .project-gallery--penon img { object-fit: contain; }
+    .project-visual--fauna { background: #d9e0db; }
+    .project-visual--fauna picture,
+    .project-visual--fauna picture img { width: 100%; height: 100%; }
+    .project-visual--fauna picture img { min-height: 190px; object-fit: cover; filter: saturate(.78); transition: transform .35s ease; }
+    .project:hover .project-visual--fauna picture img { transform: scale(1.035); }
+    .fauna-logo { position: absolute; right: 1rem; bottom: 1rem; z-index: 1; width: 86px !important; height: auto !important; min-height: 0 !important; padding: .35rem !important; border: 1px solid rgba(32,39,36,.28); background: rgba(241,238,231,.88); object-fit: contain !important; }
+    .visual-credit { position: absolute; left: .9rem; bottom: .7rem; z-index: 1; color: var(--ink); font-family: var(--mono); font-size: .58rem; letter-spacing: .03em; text-transform: uppercase; }
+    .project-systems { display: flex; flex-wrap: wrap; gap: .35rem .8rem; margin: .85rem 0 0; padding: .65rem 0 0; border-top: 1px solid var(--line); color: var(--ink); font-family: var(--mono); font-size: .64rem; letter-spacing: .03em; text-transform: uppercase; }
+    .project-systems span::before { content: "＋"; color: var(--red); }
+    .project-visual--pompeii { display: grid; place-items: center; background: #e8dfd0; }
+    .project-visual--pompeii::before { content: ""; position: absolute; width: 60%; height: 62%; border: 1px solid var(--ochre); background: repeating-linear-gradient(0deg, transparent 0 13px, rgba(189,138,47,.2) 13px 14px); }
+    .project-visual--pompeii .visual-slot { position: relative; z-index: 1; color: var(--ochre); font-family: var(--serif); font-size: clamp(1.7rem, 4vw, 3.2rem); line-height: .9; text-align: center; }
+    .project-title { grid-area: title; display: flex; flex-direction: column; gap: .35rem; min-width: 0; }
+    .project-title h3 { font-size: clamp(1.45rem, 3vw, 2.5rem); overflow-wrap: anywhere; }
+    .project-state { color: var(--muted); font-family: var(--mono); font-size: .68rem; letter-spacing: .04em; text-transform: uppercase; }
+    .project-copy { grid-area: copy; min-width: 0; color: var(--muted); font-size: .94rem; }
+    .project-copy p { margin: .75rem 0 0; }
+    .project-meta { grid-area: meta; display: flex; flex-wrap: wrap; gap: .5rem 1rem; margin-top: 1rem; color: var(--muted); font-family: var(--mono); font-size: .66rem; text-transform: uppercase; }
+    .project-meta a { color: var(--red-dark); font-weight: 700; text-decoration: none; }
+    .project-meta a:hover { color: var(--ink); }
+    .project--featured { grid-column: span 7; }
+    .project--featured .project-title h3 { color: var(--red-dark); }
+    .project:nth-child(2) { grid-column: span 5; }
+    .project:nth-child(3) { grid-column: span 5; }
+    .project:nth-child(4) { grid-column: span 7; }
+    .project--featured .project-visual, .project:nth-child(4) .project-visual { min-height: 240px; }
+    .project--featured .project-copy, .project:nth-child(4) .project-copy { max-width: 58ch; }
+
+    .about-grid { display: grid; grid-template-columns: minmax(190px, .65fr) minmax(0, 1.35fr); gap: clamp(2rem, 8vw, 8rem); align-items: start; }
+    .portrait-frame { position: relative; width: 100%; max-width: 290px; margin: 0; padding: .7rem .7rem 2.4rem; background: var(--paper-light); box-shadow: 7px 8px 0 rgba(32,39,36,.1); transform: rotate(-1.5deg); }
+    .portrait-frame img { width: 100%; height: auto; aspect-ratio: 800 / 823; object-fit: cover; object-position: center 38%; filter: saturate(.75) contrast(.96); }
+    .portrait-caption { position: absolute; right: .8rem; bottom: .7rem; color: var(--muted); font-family: var(--mono); font-size: .6rem; }
+    .about-copy > p { max-width: 62ch; color: var(--muted); font-size: 1.02rem; }
+    .about-copy > p:first-of-type { color: var(--ink); font-family: var(--serif); font-size: clamp(1.35rem, 2.5vw, 1.8rem); line-height: 1.22; }
+    .principles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; margin-top: 2rem; border-top: 1px solid var(--line-dark); }
+    .principle { padding-top: .8rem; border-top: 3px solid var(--red); }
+    .principle strong { display: block; margin-bottom: .25rem; font-family: var(--serif); font-size: 1.15rem; }
+    .principle span { color: var(--muted); font-size: .78rem; }
+
+    .experience { border-top: 1px solid var(--ink); }
+    .exp-row { display: grid; grid-template-columns: 155px minmax(0, 1fr) 145px; gap: 1.5rem; padding: 1.35rem 0; border-bottom: 1px solid var(--line-dark); }
+    .exp-date, .exp-tag { color: var(--muted); font-family: var(--mono); font-size: .68rem; letter-spacing: .04em; text-transform: uppercase; }
+    .exp-tag { color: var(--red-dark); text-align: right; }
+    .exp-role { margin: 0; font-family: var(--serif); font-size: 1.35rem; }
+    .exp-role span { color: var(--muted); font-family: var(--sans); font-size: .9rem; }
+    .exp-desc { max-width: 62ch; margin: .35rem 0 0; color: var(--muted); font-size: .88rem; }
+
+    .case-file { display: grid; grid-template-columns: minmax(0, 1fr) minmax(260px, .72fr); gap: clamp(2rem, 7vw, 7rem); padding: clamp(1.5rem, 4vw, 3rem) 0; border-block: 1px solid var(--ink); }
+    .case-file h2 { max-width: 10ch; }
+    .case-lead { max-width: 60ch; margin: 1rem 0 0; color: var(--muted); }
+    .case-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 2rem; }
+    .case-step { padding-top: .8rem; border-top: 3px solid var(--ink); }
+    .case-step span { display: block; margin-bottom: .35rem; color: var(--red); font-family: var(--mono); font-size: .63rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+    .case-step strong { display: block; margin-bottom: .2rem; font-family: var(--serif); font-size: 1.1rem; }
+    .case-step p { margin: 0; color: var(--muted); font-size: .78rem; line-height: 1.45; }
+    .facts { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line-dark); }
+    .facts li { display: grid; grid-template-columns: 80px 1fr; gap: .75rem; padding: .7rem 0; border-bottom: 1px solid var(--line); font-size: .78rem; }
+    .facts strong { color: var(--red-dark); font-family: var(--mono); font-size: .62rem; letter-spacing: .05em; text-transform: uppercase; }
+    .facts span { color: var(--muted); }
+    .case-sheet { align-self: start; padding: 1rem; border: 1px solid var(--line-dark); background: var(--paper-light); transform: rotate(1.2deg); }
+    .sheet-head { display: flex; justify-content: space-between; gap: 1rem; padding-bottom: .7rem; border-bottom: 1px solid var(--ink); color: var(--red-dark); font-family: var(--mono); font-size: .62rem; font-weight: 700; text-transform: uppercase; }
+    .sheet-body { padding: .7rem 0; }
+    .sheet-row { display: grid; grid-template-columns: 75px 1fr; gap: .6rem; padding: .5rem 0; border-bottom: 1px solid var(--line); font-family: var(--mono); font-size: .68rem; }
+    .sheet-row:last-child { border-bottom: 0; }
+    .sheet-row dt { color: var(--muted); }
+    .sheet-row dd { margin: 0; color: var(--ink); }
+    .sheet-stamp { display: inline-block; margin-top: .8rem; border: 1px solid var(--red); padding: .25rem .4rem; color: var(--red); font-family: var(--mono); font-size: .6rem; font-weight: 700; letter-spacing: .08em; transform: rotate(-3deg); }
+
+    .contact { display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: end; padding: clamp(4rem, 8vw, 7rem) 0 3rem; }
+    .contact h2 { max-width: 9ch; }
+    .contact p { max-width: 45ch; margin: 1rem 0 0; color: var(--muted); }
+    .contact-links { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: .8rem; }
+    .contact-links a { border-bottom: 1px solid var(--red); padding-bottom: .2rem; color: var(--red-dark); font-family: var(--mono); font-size: .72rem; font-weight: 700; text-decoration: none; text-transform: uppercase; }
+    .contact-links a:hover { color: var(--ink); border-color: var(--ink); }
+    .site-footer { display: flex; justify-content: space-between; gap: 1rem; padding: 1rem 0 2rem; border-top: 1px solid var(--ink); color: var(--muted); font-family: var(--mono); font-size: .64rem; text-transform: uppercase; }
+
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-index { max-width: 470px; min-height: 260px; }
+      .register { grid-template-columns: 1fr; }
+      .register-list { justify-content: flex-start; }
+      .work-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .project, .project--featured, .project:nth-child(2), .project:nth-child(3), .project:nth-child(4) { grid-column: span 1; }
+      .project--featured, .project:nth-child(4) { grid-column: span 2; }
+      .project-visual, .project--featured .project-visual, .project:nth-child(4) .project-visual { min-height: 210px; }
+      .project-meta { justify-content: flex-start; text-align: left; }
+      .about-grid { grid-template-columns: 180px minmax(0, 1fr); gap: 2.5rem; }
+      .portrait-frame { width: 180px; }
+      .case-file { grid-template-columns: 1fr; }
+      .case-sheet { max-width: 420px; }
+      .contact { grid-template-columns: 1fr; }
+      .contact-links { justify-content: flex-start; }
+    }
+    @media (max-width: 700px) {
+      .wrap { width: min(calc(100% - 2rem), var(--max)); }
+      .header-inner { grid-template-columns: 1fr auto; gap: .7rem; padding: .65rem 0; }
+      .brand-note { display: none; }
+      .nav-wrap { position: relative; display: block; grid-column: 1 / -1; grid-row: 2; min-width: 0; }
+       .site-nav { justify-content: flex-start; gap: 1.1rem; overflow-x: auto; padding: .5rem 4.5rem .1rem 0; border-top: 1px solid var(--line); font-size: .64rem; white-space: nowrap; scrollbar-width: thin; }
+       .nav-scroll-hint { position: absolute; top: .55rem; right: 0; display: block; padding-left: 1.2rem; background: linear-gradient(90deg, transparent, var(--paper) 22%); color: var(--red-dark); font-family: var(--mono); font-size: .58rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; pointer-events: none; }
+      .header-contact { font-size: .62rem; }
+      .hero { padding-top: 3.5rem; }
+      h1 { font-size: clamp(3.8rem, 19vw, 6rem); }
+      .hero-index { min-height: 230px; }
+      .section-heading { display: block; }
+      .section-heading p { margin-top: 1rem; }
+      .work-list { display: block; }
+      .project, .project--featured, .project:nth-child(2), .project:nth-child(3), .project:nth-child(4) { display: grid; grid-template-columns: 38px minmax(0, 1fr); grid-template-areas: "no visual" "no title" "no copy" "no meta"; margin-bottom: 1.5rem; }
+      .project:hover { transform: none; }
+      .project-visual, .project--featured .project-visual, .project:nth-child(4) .project-visual { min-height: 190px; }
+      .project-gallery--ndp { grid-template-columns: 1.15fr .85fr; grid-template-rows: 1fr 1fr; }
+      .project-gallery--ndp .gallery-link:first-child { grid-row: 1 / -1; }
+      .project-copy { font-size: .92rem; }
+      .project-meta { gap: .45rem .9rem; }
+      .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .portrait-frame { width: min(100%, 230px); max-width: 230px; }
+      .principles, .case-steps { grid-template-columns: 1fr; }
+      .exp-row { grid-template-columns: 1fr; gap: .35rem; }
+      .exp-tag { text-align: left; }
+      .facts li { grid-template-columns: 1fr; gap: .2rem; }
+      .case-sheet { transform: none; }
+      .site-footer { flex-direction: column; }
+    }
+    @media (max-width: 390px) {
+      .draft-bar { font-size: .58rem; }
+      .hero-role { font-size: .7rem; }
+      .register-list { display: grid; grid-template-columns: 1fr 1fr; gap: .4rem; font-size: .85rem; }
+      .contact-links { display: grid; grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 320px) {
+      .wrap { width: calc(100% - 1.25rem); }
+      .brand-name { font-size: .95rem; }
+      .header-contact { font-size: .56rem; }
+      .project, .project--featured, .project:nth-child(2), .project:nth-child(3), .project:nth-child(4) { grid-template-columns: 30px minmax(0, 1fr); }
+      .project-visual, .project--featured .project-visual, .project:nth-child(4) .project-visual { min-height: 165px; }
+      .project-no { font-size: .62rem; }
+      .sheet-row { grid-template-columns: 1fr; gap: .15rem; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition: none !important; }
+    }
+  </style>
 </head>
-<body class="is-preload">
+<body>
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+  <div class="draft-bar">Gameplay Programmer · Unity / C# · Barcelona</div>
 
-	<a class="skip-link" href="#main" data-lang-es="Saltar al contenido principal" data-lang-en="Skip to main content">Saltar al contenido principal</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#top" aria-label="Javier López, inicio">
+        <span class="brand-mark" aria-hidden="true">J·L</span>
+        <span class="brand-name">Javier López</span>
+        <span class="brand-note">proyectos y sistemas</span>
+      </a>
+      <div class="nav-wrap">
+        <nav class="site-nav" aria-label="Principal">
+          <a href="#work">Proyectos</a>
+          <a href="#about">Sobre mí</a>
+          <a href="#experience">Experiencia</a>
+          <a href="#case">Caso técnico</a>
+          <a href="#contact">Contacto</a>
+        </nav>
+        <span class="nav-scroll-hint" aria-hidden="true">Desliza →</span>
+      </div>
+      <div class="header-tools">
+        <a class="header-contact" href="mailto:javierlopez3482@gmail.com">Escribir ↗</a>
+        <span class="language-switch" aria-label="Idioma / Language"><button type="button" data-language="es" aria-pressed="true">ES</button><span aria-hidden="true">/</span><button type="button" data-language="en" aria-pressed="false">EN</button></span>
+      </div>
+    </div>
+  </header>
 
-	<!-- NAVBAR HEADER -->
-	<nav class="navbar" role="navigation">
-		<div class="navbar-right">
-			<button id="menu-toggle" class="menu-toggle-btn" aria-label="Abrir menú" aria-controls="menu-dropdown" aria-expanded="false">
-				<span class="hamburger">
-					<span></span>
-					<span></span>
-					<span></span>
-				</span>
-			</button>
-		</div>
+  <main id="main">
+    <section class="wrap hero" id="top" aria-labelledby="hero-title">
+      <div class="hero-intro">
+        <p class="section-label">Entrada 00 · Barcelona · 2026</p>
+        <h1 id="hero-title">Javier López</h1>
+        <p class="hero-role">Gameplay Programmer · Unity / C#</p>
+        <p class="hero-statement">Construyo sistemas de juego que se entienden cuando se ponen a prueba.</p>
+        <p class="hero-copy">Este es un archivo breve de mi trabajo entre <strong>gameplay</strong>, QA y Technical Art: proyectos propios, decisiones técnicas y el proceso que queda entre una idea y una build.</p>
+        <div class="hero-actions">
+          <a class="text-link" href="#work">Abrir proyectos ↓</a>
+          <a class="text-link" href="mailto:javierlopez3482@gmail.com">Escribir ↗</a>
+        </div>
+      </div>
+      <aside class="hero-index" aria-label="Ficha del proyecto actual">
+        <div class="index-top"><span>Ficha 01 / ahora</span><strong>En desarrollo</strong></div>
+        <div class="index-mark" aria-hidden="true">PDS</div>
+        <div class="index-caption"><strong>Peñón del Sur</strong>Proyecto personal en Unity 6 · en desarrollo.</div>
+      </aside>
+    </section>
 
-		<div id="menu-dropdown" class="menu-dropdown-horizontal" role="menu" hidden>
-			<a href="index.html" data-lang-es="Inicio" data-lang-en="Home">Inicio</a>
-			<a href="index.html#two" data-lang-es="Proyectos" data-lang-en="Projects">Proyectos</a>
-			<a href="skills.html" data-lang-es="Skills y herramientas" data-lang-en="Skills & Tools">Skills y herramientas</a>
-			<a href="work.html" data-lang-es="Experiencia Profesional" data-lang-en="Professional Experience">Experiencia Profesional</a>
-			<a href="work.html#two" data-lang-es="Formación Académica" data-lang-en="Education">Formación Académica</a>
-			<a href="index.html#three" data-lang-es="Contacto" data-lang-en="Contact">Contacto</a>
-		</div>
-	</nav>
+    <section class="wrap register" aria-label="Áreas de trabajo">
+      <span class="register-intro">Índice de trabajo</span>
+      <ul class="register-list">
+        <li>Gameplay</li><li>Sistemas</li><li>Salas y turnos</li><li>QA</li><li>Technical Art</li>
+      </ul>
+    </section>
 
-	<!-- Header -->
-	<header id="header">
-		<div class="locate">
-			<div class="language-switch-container">
-				<div class="language-switch">
-					<span id="lang-label">ES</span>
-					<label class="switch">
-						<input type="checkbox" id="lang-toggle" aria-label="Cambiar idioma">
-						<span class="slider round"></span>
-					</label>
-				</div>
-			</div>
-		</div>
-		<div class="inner">
-			<a href="index.html" class="image avatar"><img src="images/avatar.jpg" alt="Javier López" /></a>
-			<h1 data-lang-es="<strong>Javier López</strong><br />Game Developer & Technical Artist<br /><span style='font-size: 0.7em; font-weight: 300;'>Especializado en desarrollo de gameplay, programación de sistemas y optimización técnica</span>"
-				data-lang-en="<strong>Javier López</strong><br />Game Developer & Technical Artist<br /><span style='font-size: 0.7em; font-weight: 300;'>Specialized in gameplay development, systems programming, and technical optimization</span>">
-				<strong>Javier López</strong><br />
-				Game Developer & Technical Artist<br />
-				<span style="font-size: 0.7em; font-weight: 300;">Especializado en desarrollo de gameplay, programación de sistemas y optimización técnica</span>
-			</h1>
-		</div>
-	</header>
+    <span id="three" class="legacy-anchor" aria-hidden="true"></span>
+    <section class="wrap section" id="work" aria-labelledby="work-title">
+      <div class="section-heading">
+        <div><p class="section-label">01 · Proyectos</p><h2 id="work-title">Trabajo seleccionado</h2></div>
+        <p>Proyectos propios y colaborativos donde el gameplay se convierte en sistemas que se pueden probar.</p>
+      </div>
+      <div class="work-list">
+        <article class="project project--featured">
+          <div class="project-no">01</div>
+          <div class="project-visual project-visual--ndp" role="group" aria-label="Imágenes de Nada de Pensar: partida, mazos temáticos y respuestas únicas">
+            <div class="project-gallery project-gallery--ndp">
+              <a class="gallery-link" href="assets/ndp-01-respuesta.png" target="_blank" rel="noopener noreferrer" aria-label="Ampliar captura principal de Nada de Pensar (se abre en una pestaña nueva)">
+                <picture>
+                  <source srcset="assets/ndp-01-respuesta.webp" type="image/webp" />
+                  <img src="assets/ndp-01-respuesta.png" alt="Nada de Pensar: partida en curso con selección de respuesta" width="347" height="491" loading="eager" />
+                </picture>
+              </a>
+              <a class="gallery-link" href="assets/ndp-02-mazos.png" target="_blank" rel="noopener noreferrer" aria-label="Ampliar captura de mazos temáticos de Nada de Pensar (se abre en una pestaña nueva)">
+                <picture>
+                  <source srcset="assets/ndp-02-mazos.webp" type="image/webp" />
+                  <img src="assets/ndp-02-mazos.png" alt="Nada de Pensar: pantalla de selección de mazos temáticos" width="347" height="491" loading="lazy" />
+                </picture>
+              </a>
+              <a class="gallery-link" href="assets/ndp-03-unicas.png" target="_blank" rel="noopener noreferrer" aria-label="Ampliar captura de respuestas únicas de Nada de Pensar (se abre en una pestaña nueva)">
+                <picture>
+                  <source srcset="assets/ndp-03-unicas.webp" type="image/webp" />
+                  <img src="assets/ndp-03-unicas.png" alt="Nada de Pensar: ronda con cartas y respuestas únicas" width="347" height="491" loading="lazy" />
+                </picture>
+              </a>
+            </div>
+          </div>
+          <div class="project-title"><h3>Nada de Pensar</h3><span class="project-state">Proyecto principal · build WebGL pública</span></div>
+          <div class="project-copy"><p>Party game online de cartas para completar frases. Diseño y programación en solitario: salas por código, turnos de selector, mazos temáticos y puntuación. Migré la red de Netcode/Relay a Photon PUN para la build WebGL.</p><div class="project-systems"><span>salas</span><span>turnos</span><span>sincronización</span></div></div>
+          <div class="project-meta"><span>Unity 2022.3</span><span>Photon PUN</span><a href="https://javilopez2.itch.io/ndp-nada-de-pensar-game">Ver en itch.io ↗</a><a href="#case">Leer caso ↓</a></div>
+        </article>
+        <article class="project">
+          <div class="project-no">02</div>
+          <div class="project-visual project-visual--penon" role="group" aria-label="Imágenes de Peñón del Sur: gameplay, entorno y tienda de mejoras">
+            <div class="project-gallery project-gallery--penon">
+              <a class="gallery-link" href="assets/pds-03-gameplay-hud.png" target="_blank" rel="noopener noreferrer" aria-label="Ampliar captura principal del HUD de Peñón del Sur (se abre en una pestaña nueva)">
+                <picture>
+                  <source srcset="assets/pds-03-gameplay-hud.webp" type="image/webp" />
+                  <img src="assets/pds-03-gameplay-hud.png" alt="Peñón del Sur: gameplay con HUD de objetivos, sospecha, inventario y robo avanzado" width="1280" height="720" loading="eager" />
+                </picture>
+              </a>
+              <a class="gallery-link" href="assets/pds-02-entorno.png" target="_blank" rel="noopener noreferrer" aria-label="Ampliar captura del entorno de Peñón del Sur (se abre en una pestaña nueva)">
+                <picture>
+                  <source srcset="assets/pds-02-entorno.webp" type="image/webp" />
+                  <img src="assets/pds-02-entorno.png" alt="Peñón del Sur: personaje en el entorno turístico del juego" width="1280" height="720" loading="lazy" />
+                </picture>
+              </a>
+              <a class="gallery-link" href="assets/pds-01-shop.png" target="_blank" rel="noopener noreferrer" aria-label="Ampliar captura de la tienda de Peñón del Sur (se abre en una pestaña nueva)">
+                <picture>
+                  <source srcset="assets/pds-01-shop.webp" type="image/webp" />
+                  <img src="assets/pds-01-shop.png" alt="Peñón del Sur: tienda de mejoras y progresión" width="1280" height="720" loading="lazy" />
+                </picture>
+              </a>
+            </div>
+          </div>
+          <div class="project-title"><h3>Peñón del Sur</h3><span class="project-state">Proyecto actual · en desarrollo</span></div>
+          <div class="project-copy"><p>Proyecto personal en desarrollo sobre un mono ladrón en un entorno turístico. Trabajo en el loop de hurto, sigilo, sospecha de NPC, persecuciones, inventario, economía diaria y minijuegos.</p><div class="project-systems"><span>hurto</span><span>sigilo</span><span>NPC</span></div></div>
+          <div class="project-meta"><span>Unity 6</span><span>Diseño y programación</span></div>
+        </article>
+        <article class="project">
+          <div class="project-no">03</div>
+          <div class="project-visual project-visual--fauna">
+            <picture>
+              <source srcset="assets/fauna-scene-01.webp" type="image/webp" />
+              <img src="assets/fauna-scene-01.png" alt="Captura de Fauna: escenario 3D del juego" width="1600" height="902" loading="lazy" />
+            </picture>
+            <img class="fauna-logo" src="assets/fauna.png" alt="" width="1920" height="1080" loading="lazy" />
+            <span class="visual-credit">Fauna · FairyGames / JaviLopez2</span>
+          </div>
+          <div class="project-title"><h3>Fauna</h3><span class="project-state">Coautoría · en desarrollo</span></div>
+          <div class="project-copy"><p>Juego 3D de aventura, plataformas y puzles. Un robot rescata animales y se enfrenta al científico que lo desechó.</p></div>
+          <div class="project-meta"><span>Unreal Engine</span><a href="https://fairygames.itch.io/fauna-fairygames">Ver en itch.io ↗</a></div>
+        </article>
+        <article class="project">
+          <div class="project-no">04</div>
+          <div class="project-visual project-visual--pompeii" role="img" aria-label="Composición visual de Pompeii The Last Tavern: taberna y erupción">
+            <span class="visual-slot">Taberna<br />y erupción</span>
+          </div>
+          <div class="project-title"><h3>Pompeii | The Last Tavern</h3><span class="project-state">Jam de 3 días · publicado</span></div>
+          <div class="project-copy"><p>Gestiona la última taberna de Pompeya mientras el Vesubio entra en erupción. Incendios, rocas, humo y un cliente que no se va.</p></div>
+          <div class="project-meta"><span>Autor listado</span><a href="https://javilopez2.itch.io/pompeii-the-last-tavern">Ver en itch.io ↗</a></div>
+        </article>
+      </div>
+    </section>
 
-	<!-- Main -->
-	<main id="main">
-		<!-- One - About -->
-		<section id="one">
-			<header class="major">
-				<h2 data-lang-es="Sobre mí" data-lang-en="About Me">Sobre mí</h2>
-			</header>
-			<p data-lang-es="Soy desarrollador de videojuegos especializado en <strong>Game Development</strong> y <strong>Technical Art</strong>, con experiencia tanto en la industria como en proyectos independientes."
-			   data-lang-en="I am a game developer specialized in <strong>Game Development</strong> and <strong>Technical Art</strong>, with experience both in the industry and in independent projects.">
-				Soy desarrollador de videojuegos especializado en <strong>Game Development</strong> y <strong>Technical Art</strong>, con experiencia tanto en la industria como en proyectos independientes.
-			</p>
+    <span id="two" class="legacy-anchor" aria-hidden="true"></span>
+    <section class="wrap section" id="about" aria-labelledby="about-title">
+      <div class="about-grid">
+        <figure class="portrait-frame">
+          <img src="assets/avatar.jpg" alt="Retrato de Javier López" width="800" height="823" loading="lazy" />
+          <figcaption class="portrait-caption">retrato · archivo personal</figcaption>
+        </figure>
+        <div class="about-copy">
+          <p class="section-label">02 · Nota personal</p>
+          <h2 id="about-title">Gameplay, pruebas y criterio técnico.</h2>
+          <p>Programo gameplay en Unity con C#. Me interesa que las reglas, el estado, los turnos y la UI formen un sistema que se pueda explicar y probar sin depender de una explicación al lado.</p>
+          <p>En Uplay Online hice QA principalmente manual: pruebas funcionales, smoke y regresión, incidencias en Jira y trabajo con Git y Perforce en Scrum/Kanban. En Digital Legends trabajé como Technical Artist en prácticas: pipelines, shaders y materiales, optimización de assets e integración técnica.</p>
+          <p>Ahora desarrollo <strong>Peñón del Sur</strong> en Unity 6. También mantengo <strong>Nada de Pensar</strong> como uno de mis proyectos principales: una build WebGL pública y un caso técnico sobre elegir una arquitectura que pudiera llegar al navegador.</p>
+          <div class="principles">
+            <div class="principle"><strong>Observar</strong><span>Entender el estado antes de añadir otra capa.</span></div>
+            <div class="principle"><strong>Probar</strong><span>Reproducir el fallo y dejar una nota útil.</span></div>
+            <div class="principle"><strong>Hacer visible</strong><span>Explicar decisiones, límites y autoría.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-			<p data-lang-es="En <strong>Uplay Online</strong>, trabajé como <strong>QA Tester</strong>, contribuyendo a la estabilidad y calidad de títulos en producción. Posteriormente, en <strong>Digital Legends</strong> participé como <strong>Technical Artist Intern</strong>, optimizando assets para <strong>Warzone Mobile</strong> y asegurando la integración visual en distintos dispositivos."
-			   data-lang-en="At <strong>Uplay Online</strong>, I worked as a <strong>QA Tester</strong>, contributing to the stability and quality of production titles. Later, at <strong>Digital Legends</strong>, I participated as a <strong>Technical Artist Intern</strong>, optimizing assets for <strong>Warzone Mobile</strong> and ensuring visual integration across devices.">
-				En <strong>Uplay Online</strong>, trabajé como <strong>QA Tester</strong>, contribuyendo a la estabilidad y calidad de títulos en producción. Posteriormente, en <strong>Digital Legends</strong> participé como <strong>Technical Artist Intern</strong>, optimizando assets para <strong>Warzone Mobile</strong> y asegurando la integración visual en distintos dispositivos.
-			</p>
+    <section class="wrap section" id="experience" aria-labelledby="experience-title">
+      <div class="section-heading">
+        <div><p class="section-label">03 · Experiencia</p><h2 id="experience-title">Experiencia</h2></div>
+        <p>QA y Technical Art no son una etiqueta de cabecera: forman parte de cómo observo y construyo gameplay.</p>
+      </div>
+      <div class="experience">
+        <div class="exp-row"><div class="exp-date">feb 2025 — jul 2025</div><div><p class="exp-role">Technical Artist (prácticas) <span>· Digital Legends Entertainment</span></p><p class="exp-desc">Pipelines de producción, shaders y materiales, optimización de assets, integración técnica y herramientas. Proyecto móvil.</p></div><div class="exp-tag">Technical Art</div></div>
+        <div class="exp-row"><div class="exp-date">sep 2022 — feb 2024</div><div><p class="exp-role">QA Tester <span>· Uplay Online</span></p><p class="exp-desc">Testing principalmente manual: funcional, smoke y regresión. Incidencias en Jira; Git y Perforce; Scrum/Kanban.</p></div><div class="exp-tag">QA · más de un año</div></div>
+        <div class="exp-row"><div class="exp-date">En curso</div><div><p class="exp-role">Proyectos propios <span>· Peñón del Sur; Nada de Pensar; Fauna</span></p><p class="exp-desc">Peñón del Sur está en desarrollo en Unity 6. En Nada de Pensar hice diseño, programación y migración de red; en Fauna figuro como coautor listado.</p></div><div class="exp-tag">Proyectos</div></div>
+        <div class="exp-row"><div class="exp-date">Formación</div><div><p class="exp-role">DAM y AJEI <span>· ENTI Barcelona</span></p><p class="exp-desc">DAM finalizado en julio de 2025. AJEI cursado en ENTI. Español nativo · catalán C1 · inglés B2.</p></div><div class="exp-tag">ENTI</div></div>
+      </div>
+    </section>
 
-			<p data-lang-es="En mis proyectos personales, he liderado equipos como <strong>programador principal</strong> y <strong>artista técnico</strong>, diseñando sistemas de <strong>gameplay</strong>, <strong>IA</strong> y mecánicas innovadoras."
-			   data-lang-en="In my personal projects, I have led teams as <strong>lead programmer</strong> and <strong>technical artist</strong>, designing <strong>gameplay</strong>, <strong>AI</strong> systems, and innovative mechanics.">
-				En mis proyectos personales, he liderado equipos como <strong>programador principal</strong> y <strong>artista técnico</strong>, diseñando sistemas de <strong>gameplay</strong>, <strong>IA</strong> y mecánicas innovadoras.
-			</p>
+    <section class="wrap section" id="case" aria-labelledby="case-title">
+      <div class="case-file">
+        <div>
+          <p class="section-label">04 · Ficha técnica · Nada de Pensar</p>
+          <h2 id="case-title">Elegir una red que llegara al navegador.</h2>
+          <p class="case-lead">La primera versión usaba Unity Netcode for GameObjects y Unity Relay. Al probar la build WebGL aparecieron errores de compatibilidad, incluido <code>getdyncaller</code>. El problema era de esta implementación y este entorno.</p>
+          <div class="case-steps">
+            <div class="case-step"><span>01 · Problema</span><strong>WebGL + multijugador</strong><p>La arquitectura inicial no permitía desplegar el juego como necesitaba.</p></div>
+            <div class="case-step"><span>02 · Decisión</span><strong>Migrar a Photon PUN</strong><p>Investigué casos similares y adapté la capa de red y el flujo multijugador.</p></div>
+            <div class="case-step"><span>03 · Resultado</span><strong>Build jugable</strong><p>Se juega desde itch.io y se probó online con 5 personas en total. Capacidad: 7.</p></div>
+          </div>
+          <ul class="facts">
+            <li><strong>Motor</strong><span>Unity 2022.3.62f1, compilación WebGL.</span></li>
+            <li><strong>Red</strong><span>Photon PUN; salas por código, turnos y sincronización de cartas.</span></li>
+            <li><strong>Juego</strong><span>Mano, mazo, puntuación, ranking y UI.</span></li>
+            <li><strong>Pruebas</strong><span>5 personas en total, incluido yo; capacidad prevista 7. No fue una prueba de carga.</span></li>
+            <li><strong>Límites</strong><span>Sin métricas de latencia, estabilidad o rendimiento. No se probó con 7.</span></li>
+          </ul>
+        </div>
+        <aside class="case-sheet" aria-label="Resumen técnico de la build de Nada de Pensar">
+          <div class="sheet-head"><span>ficha / ndp</span><span>04—A</span></div>
+          <dl class="sheet-body">
+            <div class="sheet-row"><dt>engine</dt><dd>Unity 2022.3.62f1</dd></div>
+            <div class="sheet-row"><dt>target</dt><dd>WebGL · 540 × 960</dd></div>
+            <div class="sheet-row"><dt>network</dt><dd>Photon PUN</dd></div>
+            <div class="sheet-row"><dt>flow</dt><dd>rooms · turns · cards</dd></div>
+            <div class="sheet-row"><dt>tests</dt><dd>5 real · capacity 7</dd></div>
+            <div class="sheet-row"><dt>status</dt><dd>public build</dd></div>
+          </dl>
+          <span class="sheet-stamp">DECISIÓN DOCUMENTADA</span>
+        </aside>
+      </div>
+    </section>
 
-			<p data-lang-es="Mi objetivo es aportar soluciones técnicas que combinen eficiencia, rendimiento y calidad visual, creando experiencias inmersivas para todo tipo de jugadores."
-			   data-lang-en="My goal is to provide technical solutions that combine efficiency, performance, and visual quality, creating immersive experiences for all types of players.">
-				Mi objetivo es aportar soluciones técnicas que combinen eficiencia, rendimiento y calidad visual, creando experiencias inmersivas para todo tipo de jugadores.
-			</p>
+    <section class="wrap contact" id="contact" aria-labelledby="contact-title">
+      <div><p class="section-label">05 · Última página</p><h2 id="contact-title">¿Hablamos?</h2><p>Estoy en Barcelona. Puedes escribirme por email o ver el resto del trabajo en itch.io.</p></div>
+      <div class="contact-links"><a href="mailto:javierlopez3482@gmail.com">Email ↗</a><a href="https://javilopez2.itch.io">itch.io ↗</a><a href="https://github.com/JaviLopez2">GitHub ↗</a></div>
+    </section>
+  </main>
 
-			<ul class="actions">
-				<li><a href="index.html#two" class="button" data-lang-es="Ver Portfolio" data-lang-en="View Portfolio">Ver Portfolio</a></li>
-				<li><a href="skills.html" class="button" data-lang-es="Skills y herramientas" data-lang-en="Skills &amp; Tools">Skills y herramientas</a></li>
-			</ul>
-		</section>
-
-		<!-- Two -->
-		<section id="two">
-			<h2 data-lang-es="Portfolio de Proyectos" data-lang-en="Project Portfolio">Portfolio de Proyectos</h2>
-			<div class="row">
-				<!-- BRICKSOLVE -->
-				<article class="col-6 col-12-xsmall work-item">
-					<a href="images/Bricksolve.png" class="image fit thumb"><img src="images/Bricksolve.png" alt="Bricksolve Game Screenshot" loading="lazy" /></a>
-					<h3 data-lang-es="BRICKSOLVE - Proyecto Final" data-lang-en="BRICKSOLVE - Final Project">BRICKSOLVE - Proyecto Final</h3>
-					<p data-lang-es="<strong>Lead Programmer & Technical Artist</strong><br />BrickSolve es un proyecto final que mezcla <strong>puzzles dinámicos</strong> y acción. Mi rol fue diseñar e implementar las <strong>mecánicas principales de gameplay</strong>, la <strong>lógica de niveles</strong> y todos los <strong>sistemas técnicos</strong>. También desarrollé la <em>UI</em>, la funcionalidad del <strong>ray gun</strong> y optimicé tanto <strong>assets</strong> como <strong>niveles</strong>, logrando una experiencia <strong>fluida</strong>, <strong>desafiante</strong> y <strong>bien balanceada</strong> para el jugador."
-					   data-lang-en="<strong>Lead Programmer & Technical Artist</strong><br />BrickSolve is a final project that combines <strong>dynamic puzzles</strong> and action. My role was to design and implement the <strong>core gameplay mechanics</strong>, <strong>level logic</strong>, and all <strong>technical systems</strong>. I also developed the <em>UI</em>, the <strong>ray gun</strong> functionality, and optimized both <strong>assets</strong> and <strong>levels</strong>, achieving a <strong>smooth</strong>, <strong>challenging</strong>, and <strong>well-balanced</strong> experience for the player.">
-						<strong>Lead Programmer & Technical Artist</strong><br />BrickSolve es un proyecto final que mezcla <strong>puzzles dinámicos</strong> y acción. Mi rol fue diseñar e implementar las <strong>mecánicas principales de gameplay</strong>, la <strong>lógica de niveles</strong> y todos los <strong>sistemas técnicos</strong>. También desarrollé la <em>UI</em>, la funcionalidad del <strong>ray gun</strong> y optimicé tanto <strong>assets</strong> como <strong>niveles</strong>, logrando una experiencia <strong>fluida</strong>, <strong>desafiante</strong> y <strong>bien balanceada</strong> para el jugador.
-					</p>
-					<ul class="actions special">
-						<li><a href="https://bluemaze-games.itch.io/brick-solve" class="button small" data-lang-es="Ver en Itch.io" data-lang-en="View on Itch.io" target="_blank" rel="noopener noreferrer">Ver en Itch.io</a></li>
-						<li><a href="https://www.youtube.com/watch?v=jg5EIpfMWaQ" class="button small" data-lang-es="Ver Tráiler" data-lang-en="Watch Trailer" target="_blank" rel="noopener noreferrer">Ver Tráiler</a></li>
-					</ul>
-				</article>
-				<!-- NADA DE PENSAR -->
-				<article class="col-6 col-12-xsmall work-item">
-					<a href="images/NDP.png" class="image fit thumb"><img src="images/NDP.png" alt="Nada De Pensar Game Screenshot" loading="lazy" /></a>
-					<h3 data-lang-es="NADA DE PENSAR - Proyecto Personal" data-lang-en="NADA DE PENSAR - Personal Project">NADA DE PENSAR - Proyecto Personal</h3>
-					<p data-lang-es="<strong>Solo Developer</strong><br />Nada De Pensar es un <strong>party game multijugador online</strong> creado completamente por mí. Diseñé e implementé toda la <strong>lógica de juego</strong>, el <strong>sistema de salas online</strong>, la <strong>interfaz de usuario</strong> y la <strong>sincronización en tiempo real</strong>. También desarrollé la <strong>lógica de cartas</strong>, el <strong>sistema de puntuación</strong> y optimicé el rendimiento para asegurar partidas <strong>estables</strong> y <strong>divertidas</strong> con hasta 7 jugadores."
-					   data-lang-en="<strong>Solo Developer</strong><br />Nada De Pensar is an <strong>online multiplayer party game</strong> fully developed by me. I designed and implemented all the <strong>game logic</strong>, <strong>online room system</strong>, <strong>user interface</strong>, and <strong>real-time synchronization</strong>. I also built the <strong>card logic</strong>, <strong>scoring system</strong>, and optimized performance to ensure <strong>stable</strong> and <strong>fun</strong> matches with up to 7 players.">
-						<strong>Solo Developer</strong><br />Nada De Pensar es un <strong>party game multijugador online</strong> creado completamente por mí. Diseñé e implementé toda la <strong>lógica de juego</strong>, el <strong>sistema de salas online</strong>, la <strong>interfaz de usuario</strong> y la <strong>sincronización en tiempo real</strong>. También desarrollé la <strong>lógica de cartas</strong>, el <strong>sistema de puntuación</strong> y optimicé el rendimiento para asegurar partidas <strong>estables</strong> y <strong>divertidas</strong> con hasta 7 jugadores.
-					</p>
-					<ul class="actions special">
-						<li><a href="https://javilopez2.itch.io/ndp-nada-de-pensar-game" class="button small" data-lang-es="Ver en Itch.io" data-lang-en="View on Itch.io" target="_blank" rel="noopener noreferrer">Ver en Itch.io</a></li>
-					</ul>
-				</article>
-
-
-				<!-- NEAR THE END -->
-				<article class="col-6 col-12-xsmall work-item">
-					<a href="images/NearTheEnd.jpg" class="image fit thumb"><img src="images/NearTheEnd.jpg" alt="Near the End Game Screenshot" loading="lazy" /></a>
-					<h3 data-lang-es="NEAR THE END" data-lang-en="NEAR THE END">NEAR THE END</h3>
-					<p data-lang-es="<strong>Principal Programmer & Technical Artist</strong><br />Near the End es un juego narrativo de acción donde el jugador debe sobrevivir en un mundo hostil. Lideré la programación de la <strong>IA enemiga avanzada</strong>, los <strong>controles del jugador</strong> y la <strong>arquitectura completa de gameplay</strong>. Además, desarrollé la <em>UI</em> e integré los <strong>elementos visuales</strong> para garantizar una experiencia <strong>coherente</strong>, <strong>inmersiva</strong> y con un <strong>ritmo de juego atractivo</strong>."
-					   data-lang-en="<strong>Principal Programmer & Technical Artist</strong><br />Near the End is a narrative action game where the player must survive in a hostile world. I led the programming of the <strong>advanced enemy AI</strong>, <strong>player controls</strong>, and the <strong>entire gameplay architecture</strong>. I also developed the <em>UI</em> and integrated <strong>visual elements</strong> to ensure a <strong>coherent</strong>, <strong>immersive</strong>, and <strong>engaging gameplay flow</strong>.">
-						<strong>Principal Programmer & Technical Artist</strong><br />Near the End es un juego narrativo de acción donde el jugador debe sobrevivir en un mundo hostil. Lideré la programación de la <strong>IA enemiga avanzada</strong>, los <strong>controles del jugador</strong> y la <strong>arquitectura completa de gameplay</strong>. Además, desarrollé la <em>UI</em> e integré los <strong>elementos visuales</strong> para garantizar una experiencia <strong>coherente</strong>, <strong>inmersiva</strong> y con un <strong>ritmo de juego atractivo</strong>.
-					</p>
-					<ul class="actions special">
-						<li><a href="https://polpa.itch.io/near-the-end" class="button small" data-lang-es="Ver en Itch.io" data-lang-en="View on Itch.io" target="_blank" rel="noopener noreferrer">Ver en Itch.io</a></li>
-						<li><a href="https://www.youtube.com/watch?v=174GBSePtm0" class="button small" data-lang-es="Ver Tráiler" data-lang-en="Watch Trailer" target="_blank" rel="noopener noreferrer">Ver Tráiler</a></li>
-					</ul>
-				</article>
-
-				<!-- FAUNA -->
-				<article class="col-6 col-12-xsmall work-item">
-					<a href="images/Logo_Fauna.png" class="image fit thumb"><img src="images/Logo_Fauna.png" alt="Fauna Game Logo" loading="lazy" /></a>
-					<h3 data-lang-es="FAUNA - Proyecto Final" data-lang-en="FAUNA - Final Project">FAUNA - Proyecto Final</h3>
-					<p data-lang-es="<strong>Main Programmer & Technical Artist</strong><br />Fauna es un juego de exploración donde el jugador puede transformarse para interactuar con el entorno. Me encargué de crear las <strong>mecánicas de transformación</strong>, las <strong>interacciones ambientales</strong> y el <em>scripting de niveles</em>. También desarrollé la <em>UI</em> e integré los <strong>assets</strong> para construir una experiencia <strong>dinámica</strong> y <strong>envolvente</strong>, que invita al jugador a experimentar con su entorno."
-					   data-lang-en="<strong>Main Programmer & Technical Artist</strong><br />Fauna is an exploration game where players can transform to interact with the environment. I was responsible for creating the <strong>transformation mechanics</strong>, <strong>environmental interactions</strong>, and <em>level scripting</em>. I also developed the <em>UI</em> and integrated the <strong>assets</strong> to build a <strong>dynamic</strong> and <strong>immersive</strong> experience that encourages the player to experiment with their surroundings.">
-						<strong>Main Programmer & Technical Artist</strong><br />Fauna es un juego de exploración donde el jugador puede transformarse para interactuar con el entorno. Me encargué de crear las <strong>mecánicas de transformación</strong>, las <strong>interacciones ambientales</strong> y el <em>scripting de niveles</em>. También desarrollé la <em>UI</em> e integré los <strong>assets</strong> para construir una experiencia <strong>dinámica</strong> y <strong>envolvente</strong>, que invita al jugador a experimentar con su entorno.
-					</p>
-					<ul class="actions special">
-						<li><a href="https://fairygames.itch.io/fauna-fairygames" class="button small" data-lang-es="Ver en Itch.io" data-lang-en="View on Itch.io" target="_blank" rel="noopener noreferrer">Ver en Itch.io</a></li>
-						<li><a href="https://www.youtube.com/watch?v=ro_a5QBVG4M&t=1s" class="button small" data-lang-es="Ver Tráiler" data-lang-en="Watch Trailer" target="_blank" rel="noopener noreferrer">Ver Tráiler</a></li>
-					</ul>
-				</article>
-
-				<!-- Warzone Mobile -->
-				<article class="col-6 col-12-xsmall work-item">
-					<a href="images/coc.jpg" class="image fit thumb"><img src="images/coc.jpg" alt="Warzone Mobile Assets" loading="lazy" /></a>
-					<h3 data-lang-es="Warzone Mobile - Digital Legends" data-lang-en="Warzone Mobile - Digital Legends">Warzone Mobile - Digital Legends</h3>
-					<p data-lang-es="<strong>Technical Artist Intern</strong><br />Formé parte del equipo de <strong>Warzone Mobile</strong>, un título <strong>AAA</strong> para múltiples plataformas. Mi trabajo consistió en revisar y optimizar <strong>assets 3D</strong>, asegurando tanto la <strong>calidad visual</strong> como el <strong>cumplimiento técnico</strong> en un entorno de <strong>alto rendimiento</strong>. Contribuí a mejorar la <strong>estabilidad</strong> y la <strong>eficiencia</strong> del juego sin comprometer su <strong>calidad gráfica</strong>, participando en un <strong>pipeline</strong> propio de producciones de gran escala."
-					   data-lang-en="<strong>Technical Artist Intern</strong><br />I was part of the <strong>Warzone Mobile</strong> team, a <strong>AAA</strong> title for multiple platforms. My work consisted of reviewing and optimizing <strong>3D assets</strong>, ensuring both <strong>visual quality</strong> and <strong>technical compliance</strong> in a <strong>high-performance</strong> environment. I contributed to improving the game’s <strong>stability</strong> and <strong>efficiency</strong> without compromising its <strong>graphical quality</strong>, participating in a <strong>pipeline</strong> typical of large-scale productions.">
-						<strong>Technical Artist Intern</strong><br />Formé parte del equipo de <strong>Warzone Mobile</strong>, un título <strong>AAA</strong> para múltiples plataformas. Mi trabajo consistió en revisar y optimizar <strong>assets 3D</strong>, asegurando tanto la <strong>calidad visual</strong> como el <strong>cumplimiento técnico</strong> en un entorno de <strong>alto rendimiento</strong>. Contribuí a mejorar la <strong>estabilidad</strong> y la <strong>eficiencia</strong> del juego sin comprometer su <strong>calidad gráfica</strong>, participando en un <strong>pipeline</strong> propio de producciones de gran escala.
-					</p>
-				</article>
-
-				<!-- QA Testing Projects -->
-				<article class="col-6 col-12-xsmall work-item">
-					<a href="images/uplay.png" class="image fit thumb"><img src="images/uplay.png" alt="Uplay QA Testing" loading="lazy" /></a>
-					<h3 data-lang-es="QA Testing - Uplay Online" data-lang-en="QA Testing - Uplay Online">QA Testing - Uplay Online</h3>
-					<p data-lang-es="<strong>QA Tester</strong><br />En <strong>Uplay Online</strong> participé en el testeo de <strong>tres títulos comerciales</strong>, realizando <strong>pruebas exhaustivas</strong> para detectar y documentar <strong>errores críticos</strong>. Gracias a mi labor, el equipo pudo implementar correcciones que mejoraron la <strong>estabilidad</strong> y el <strong>rendimiento</strong>, contribuyendo a ofrecer experiencias más <strong>sólidas</strong> y <strong>pulidas</strong> para los jugadores. Esta experiencia me permitió comprender a fondo la importancia de la <strong>calidad</strong> en todas las fases del desarrollo."
-					   data-lang-en="<strong>QA Tester</strong><br />At <strong>Uplay Online</strong> I participated in the testing of <strong>three commercial titles</strong>, conducting <strong>thorough testing</strong> to detect and document <strong>critical bugs</strong>. Thanks to my work, the team was able to implement fixes that improved <strong>stability</strong> and <strong>performance</strong>, helping deliver <strong>solid</strong> and <strong>polished</strong> experiences for players. This experience allowed me to deeply understand the importance of <strong>quality</strong> in all stages of development.">
-						<strong>QA Tester</strong><br />En <strong>Uplay Online</strong> participé en el testeo de <strong>tres títulos comerciales</strong>, realizando <strong>pruebas exhaustivas</strong> para detectar y documentar <strong>errores críticos</strong>. Gracias a mi labor, el equipo pudo implementar correcciones que mejoraron la <strong>estabilidad</strong> y el <strong>rendimiento</strong>, contribuyendo a ofrecer experiencias más <strong>sólidas</strong> y <strong>pulidas</strong> para los jugadores. Esta experiencia me permitió comprender a fondo la importancia de la <strong>calidad</strong> en todas las fases del desarrollo.
-					</p>
-				</article>
-
-				<!-- Próximo Proyecto -->
-				<article class="col-6 col-12-xsmall work-item">
-					<a href="images/soon.jpg" class="image fit thumb"><img src="images/soon.jpg" alt="Próximo Proyecto" loading="lazy" /></a>
-					<h3 data-lang-es="Próximo Proyecto" data-lang-en="Upcoming Project">Próximo Proyecto</h3>
-					<p data-lang-es="Actualmente estoy trabajando en <strong>prototipos experimentales</strong> con <strong>Unreal Engine 5</strong>, explorando tecnologías de vanguardia como <strong>Nanite</strong> y <strong>Lumen</strong> para crear mundos más <strong>detallados</strong> y sistemas de <strong>iluminación realista</strong>. Mi objetivo es combinar <strong>innovación técnica</strong> y <strong>diseño de gameplay</strong>, desarrollando experiencias de <strong>próxima generación</strong> que unan <strong>rendimiento</strong>, <strong>calidad visual</strong> e ideas frescas en <strong>mecánicas jugables</strong>."
-					   data-lang-en="I am currently working on <strong>experimental prototypes</strong> with <strong>Unreal Engine 5</strong>, exploring cutting-edge technologies such as <strong>Nanite</strong> and <strong>Lumen</strong> to create more <strong>detailed worlds</strong> and <strong>realistic lighting systems</strong>. My goal is to combine <strong>technical innovation</strong> and <strong>gameplay design</strong>, developing <strong>next-generation</strong> experiences that bring together <strong>performance</strong>, <strong>visual quality</strong>, and fresh ideas in <strong>gameplay mechanics</strong>.">
-						Actualmente estoy trabajando en <strong>prototipos experimentales</strong> con <strong>Unreal Engine 5</strong>, explorando tecnologías de vanguardia como <strong>Nanite</strong> y <strong>Lumen</strong> para crear mundos más <strong>detallados</strong> y sistemas de <strong>iluminación realista</strong>. Mi objetivo es combinar <strong>innovación técnica</strong> y <strong>diseño de gameplay</strong>, desarrollando experiencias de <strong>próxima generación</strong> que unan <strong>rendimiento</strong>, <strong>calidad visual</strong> e ideas frescas en <strong>mecánicas jugables</strong>.
-					</p>
-				</article>
-			</div>
-		</section>
-
-		<!-- Three - Contact -->
-		<section id="three">
-			<h2 data-lang-es="Contacto" data-lang-en="Contact">Contacto</h2>
-
-			<p data-lang-es="¿Tienes un proyecto interesante? ¿Buscas un desarrollador con experiencia en gameplay y optimización técnica? Me encantaría escuchar sobre tu próximo proyecto y cómo puedo contribuir a hacerlo realidad."
-			   data-lang-en="Do you have an interesting project? Are you looking for a developer with experience in gameplay and technical optimization? I’d love to hear about your next project and how I can help make it a reality.">
-				¿Tienes un proyecto interesante? ¿Buscas un desarrollador con experiencia en gameplay y optimización técnica? Me encantaría escuchar sobre tu próximo proyecto y cómo puedo contribuir a hacerlo realidad.
-			</p>
-
-			<div class="row">
-				<div class="col-8 col-12-small">
-					<form method="POST" action="https://formspree.io/f/xandlzog">
-						<div class="row gtr-uniform gtr-50">
-							<div class="col-6 col-12-xsmall">
-								<input type="text" name="name" id="name" placeholder="Nombre" data-lang-es="Nombre" data-lang-en="Name" aria-label="Nombre" autocomplete="name" required />
-							</div>
-							<div class="col-6 col-12-xsmall">
-								<input type="email" name="email" id="email" placeholder="Email" data-lang-es="Email" data-lang-en="Email" aria-label="Email" autocomplete="email" required />
-							</div>
-							<div class="col-12">
-								<input type="text" name="subject" id="subject" placeholder="Asunto" data-lang-es="Asunto" data-lang-en="Subject" aria-label="Asunto" autocomplete="off" />
-							</div>
-							<div class="col-12">
-								<textarea name="message" id="message" placeholder="Mensaje" data-lang-es="Mensaje" data-lang-en="Message" aria-label="Mensaje" rows="6" autocomplete="off" required></textarea>
-							</div>
-						</div>
-						<ul class="actions" style="margin-top: 2em;">
-							<li><input type="submit" value="Enviar Mensaje" data-lang-es="Enviar Mensaje" data-lang-en="Send Message" aria-label="Enviar Mensaje" class="primary" /></li>
-							<li><input type="reset" value="Limpiar" data-lang-es="Limpiar" data-lang-en="Clear" aria-label="Limpiar" /></li>
-						</ul>
-					</form>
-				</div>
-
-				<div class="col-4 col-12-small">
-					<ul class="labeled-icons">
-						<li>
-							<h3 class="icon solid fa-home"><span class="label" data-lang-es="Dirección" data-lang-en="Address">Dirección</span></h3>
-							<span data-lang-es="Barcelona, España"
-								  data-lang-en="Barcelona, Spain">
-								Barcelona, España
-							</span>
-						</li>
-						<li>
-							<h3 class="icon solid fa-envelope"><span class="label" data-lang-es="Email" data-lang-en="Email">Email</span></h3>
-							<a href="mailto:javierlopez3482@gmail.com">javierlopez3482@gmail.com</a>
-						</li>
-						<li>
-							<h3 class="icon solid fa-globe"><span class="label" data-lang-es="Idiomas" data-lang-en="Languages">Idiomas</span></h3>
-							<span data-lang-es="Español (Nativo)<br />Catalán (Nativo)<br />Inglés (Profesional)"
-								  data-lang-en="Spanish (Native)<br />Catalan (Native)<br />English (Professional)">
-								Español (Nativo)<br />
-								Catalán (Nativo)<br />
-								Inglés (Profesional)
-							</span>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</section>
-	</main>
-
-	<!-- Footer -->
-	<footer id="footer">
-		<div class="inner">
-			<ul class="icons">
-				<li><a href="https://github.com/JaviLopez2" class="icon brands fa-github" target="_blank" rel="noopener noreferrer"><span class="label">Github</span></a></li>
-				<li><a href="https://www.linkedin.com/in/javier-l%C3%B3pez-444699226/" class="icon brands fa-linkedin" target="_blank" rel="noopener noreferrer"><span class="label">LinkedIn</span></a></li>
-			</ul>
-			<ul class="copyright">
-				<li>&copy; 2025 Javier López</li>
-				<li>Game Developer & Technical Artist</li>
-			</ul>
-		</div>
-	</footer>
-
-	<!-- Scripts -->
-	<script defer src="assets/js/jquery.min.js"></script>
-	<script defer src="assets/js/jquery.poptrox.min.js"></script>
-	<script defer src="assets/js/browser.min.js"></script>
-	<script defer src="assets/js/breakpoints.min.js"></script>
-	<script defer src="assets/js/util.js"></script>
-	<script defer src="assets/js/main.js"></script>
-	<script defer src="assets/js/nav.js"></script>
-	<script defer src="assets/js/lang.js"></script>
+  <footer class="wrap site-footer"><span>Javier López · Gameplay Programmer</span><span>Proyectos, sistemas y builds</span></footer>
+  <script>
+    const translations = {
+      en: {
+        '.skip-link': 'Skip to content',
+        '.draft-bar': 'Gameplay Programmer · Unity / C# · Barcelona',
+        '.site-nav': ['Projects', 'About', 'Experience', 'Technical case', 'Contact'],
+        '.header-contact': 'Write ↗',
+        '.brand-note': 'projects and systems',
+        '.nav-scroll-hint': 'Scroll →',
+        '.hero .section-label': 'Entry 00 · Barcelona · 2026',
+        '.hero-statement': 'I build game systems that make sense when put to the test.',
+        '.hero-copy': 'A brief archive of my work across <strong>gameplay</strong>, QA and Technical Art: personal projects, technical decisions and the process between an idea and a build.',
+        '.hero-actions .text-link:first-child': 'Open projects ↓',
+        '.hero-actions .text-link:last-child': 'Write ↗',
+        '.index-top span': 'File 01 / now',
+        '.index-top strong': 'In development',
+        '.index-caption': '<strong>Peñón del Sur</strong>Personal Unity 6 project · in development.',
+        '.register-intro': 'Work index',
+        '.register-list': ['Gameplay', 'Systems', 'Rooms and turns', 'QA', 'Technical Art'],
+        '.project:nth-child(1) .project-systems span': ['rooms', 'turns', 'synchronisation'],
+        '.project:nth-child(2) .project-systems span': ['theft', 'stealth', 'NPC'],
+        '.project:nth-child(3) .visual-credit': 'Fauna · FairyGames / JaviLopez2',
+        '.project:nth-child(4) .visual-slot': 'Tavern<br>and eruption',
+        '#about .principle strong': ['Observe', 'Test', 'Make visible'],
+        '#about .principle span': ['Understand state before adding another layer.', 'Reproduce the issue and leave a useful note.', 'Explain decisions, limits and authorship.'],
+        '.portrait-caption': 'portrait · personal archive',
+        '#work .section-label': '01 · Projects',
+        '#work .section-heading h2': 'Selected work',
+        '#work .section-heading > p': 'Personal and collaborative projects where gameplay becomes systems that can be tested.',
+        '.project:nth-child(1) .project-state': 'Main project · public WebGL build',
+        '.project:nth-child(1) .project-copy p': 'Online card party game for completing sentences. Solo design and programming: code-based rooms, selector turns, themed decks and scoring. I migrated the network layer from Netcode/Relay to Photon PUN for the WebGL build.',
+        '.project:nth-child(1) .project-meta a:first-of-type': 'View on itch.io ↗',
+        '.project:nth-child(1) .project-meta a:last-of-type': 'Read case ↓',
+        '.project:nth-child(2) .project-state': 'Current project · in development',
+        '.project:nth-child(2) .project-copy p': 'Personal project in development about a thief monkey in a tourist setting. I work on the theft loop, stealth, NPC suspicion, chases, inventory, daily economy and minigames.',
+        '.project:nth-child(2) .project-meta span:last-child': 'Design and programming',
+        '.project:nth-child(3) .project-state': 'Co-authorship · in development',
+        '.project:nth-child(3) .project-copy p': '3D adventure, platforming and puzzle game. A robot rescues animals and faces the scientist who discarded it.',
+        '.project:nth-child(3) .project-meta a': 'View on itch.io ↗',
+        '.project:nth-child(4) .project-state': '3-day jam · published',
+        '.project:nth-child(4) .project-copy p': 'Manage Pompeii’s last tavern while Vesuvius erupts. Fires, rocks, smoke and one customer who refuses to leave.',
+        '.project:nth-child(4) .project-meta a': 'View on itch.io ↗',
+        '.project:nth-child(4) .project-meta span': 'Listed author',
+        '#about .section-label': '02 · Personal note',
+        '#about h2': 'Gameplay, testing and technical judgement.',
+        '#about .about-copy > p:nth-of-type(2)': 'I program gameplay in Unity with C#. I care about rules, state, turns and UI forming a system that can be explained and tested without someone standing beside it.',
+        '#about .about-copy > p:nth-of-type(3)': 'At Uplay Online I worked mainly in manual QA: functional, smoke and regression testing, Jira issues, and Git and Perforce in Scrum/Kanban. At Digital Legends I worked as a Technical Artist intern: pipelines, shaders and materials, asset optimisation and technical integration.',
+        '#about .about-copy > p:nth-of-type(4)': 'I am now developing <strong>Peñón del Sur</strong> in Unity 6. I also maintain <strong>Nada de Pensar</strong> as one of my main projects: a public WebGL build and a technical case about choosing an architecture that could reach the browser.',
+        '#experience .section-label': '03 · Experience',
+        '#experience .section-heading h2': 'Experience',
+        '#experience .section-heading > p': 'QA and Technical Art are not headline labels: they shape how I observe and build gameplay.',
+        '#experience .exp-row:nth-child(1) .exp-date': 'Feb 2025 — Jul 2025',
+        '#experience .exp-row:nth-child(1) .exp-role': 'Technical Artist (intern) <span>· Digital Legends Entertainment</span>',
+        '#experience .exp-row:nth-child(2) .exp-date': 'Sep 2022 — Feb 2024',
+        '#experience .exp-row:nth-child(2) .exp-role': 'QA Tester <span>· Uplay Online</span>',
+        '#experience .exp-row:nth-child(3) .exp-date': 'In progress',
+        '#experience .exp-row:nth-child(3) .exp-role': 'Own projects <span>· Peñón del Sur; Nada de Pensar; Fauna</span>',
+        '#experience .exp-row:nth-child(4) .exp-date': 'Education',
+        '#experience .exp-row:nth-child(4) .exp-role': 'Higher vocational training and AJEI <span>· ENTI Barcelona</span>',
+        '#experience .exp-row:nth-child(1) .exp-desc': 'Production pipelines, shaders and materials, asset optimisation, technical integration and tools. Mobile project.',
+        '#experience .exp-row:nth-child(1) .exp-tag': 'Technical Art',
+        '#experience .exp-row:nth-child(2) .exp-desc': 'Mainly manual testing: functional, smoke and regression. Jira issues; Git and Perforce; Scrum/Kanban.',
+        '#experience .exp-row:nth-child(2) .exp-tag': 'QA · over a year',
+        '#experience .exp-row:nth-child(3) .exp-desc': 'Peñón del Sur is in development in Unity 6. In Nada de Pensar I handled design, programming and network migration; in Fauna I am listed as a co-author.',
+        '#experience .exp-row:nth-child(3) .exp-tag': 'Projects',
+        '#experience .exp-row:nth-child(4) .exp-desc': 'Higher vocational training in July 2025. AJEI studied at ENTI. Native Spanish · C1 Catalan · B2 English.',
+        '#experience .exp-row:nth-child(4) .exp-tag': 'ENTI',
+        '#case .section-label': '04 · Technical file · Nada de Pensar',
+        '#case h2': 'Choosing a network stack that reached the browser.',
+        '#case .case-lead': 'The first version used Unity Netcode for GameObjects and Unity Relay. Testing the WebGL build exposed compatibility errors, including <code>getdyncaller</code>. The problem belonged to this implementation and environment.',
+        '#case .case-step:nth-child(1) strong': 'WebGL + multiplayer',
+        '#case .case-step:nth-child(1) p': 'The initial architecture could not deploy the game as needed.',
+        '#case .case-step:nth-child(2) strong': 'Migrate to Photon PUN',
+        '#case .case-step:nth-child(2) p': 'I investigated similar cases and adapted the networking layer and multiplayer flow.',
+        '#case .case-step:nth-child(3) strong': 'Playable build',
+        '#case .case-step:nth-child(3) p': 'Playable on itch.io and tested online with 5 people in total. Capacity: 7.',
+        '#case .case-step span': ['01 · Problem', '02 · Decision', '03 · Result'],
+        '#case .facts strong': ['Engine', 'Network', 'Game', 'Testing', 'Limits'],
+        '#case .facts li:nth-child(1) span': 'Unity 2022.3.62f1, WebGL build.',
+        '#case .facts li:nth-child(2) span': 'Photon PUN; code-based rooms, turns and card synchronisation.',
+        '#case .facts li:nth-child(3) span': 'Hand, deck, scoring, ranking and UI.',
+        '#case .facts li:nth-child(4) span': '5 people in total, including me; planned capacity 7. Not a load test.',
+        '#case .facts li:nth-child(5) span': 'No latency, stability or performance metrics. Not tested with 7.',
+        '.sheet-stamp': 'DOCUMENTED DECISION',
+        '#contact .section-label': '05 · Last page',
+        '#contact h2': 'Shall we talk?',
+        '#contact > div:first-child > p:not(.section-label)': 'I am based in Barcelona. Email me or see the rest of my work on itch.io.',
+        '.contact-links a:first-child': 'Email ↗',
+        '.contact-links a:nth-child(2)': 'itch.io ↗',
+        '.contact-links a:nth-child(3)': 'GitHub ↗',
+        '.site-footer span:last-child': 'Projects, systems and builds'
+      }
+    };
+    const attributeTranslations = {
+      '.language-switch': { 'aria-label': 'Language / Idioma' },
+      '.site-nav': { 'aria-label': 'Main navigation' },
+      '.brand': { 'aria-label': 'Javier López, home' },
+      '.hero-index': { 'aria-label': 'Current project file' },
+      '.register': { 'aria-label': 'Work areas' },
+      '.project:nth-child(1) .project-visual': { 'aria-label': 'Nada de Pensar images: game, themed decks and unique answers' },
+      '.project:nth-child(1) .gallery-link:nth-child(1)': { 'aria-label': 'Enlarge main Nada de Pensar screenshot (opens in a new tab)' },
+      '.project:nth-child(1) .gallery-link:nth-child(2)': { 'aria-label': 'Enlarge Nada de Pensar themed decks screenshot (opens in a new tab)' },
+      '.project:nth-child(1) .gallery-link:nth-child(3)': { 'aria-label': 'Enlarge Nada de Pensar unique answers screenshot (opens in a new tab)' },
+      '.project:nth-child(2) .project-visual': { 'aria-label': 'Peñón del Sur images: gameplay, environment and upgrade shop' },
+      '.project:nth-child(2) .gallery-link:nth-child(1)': { 'aria-label': 'Enlarge Peñón del Sur HUD screenshot (opens in a new tab)' },
+      '.project:nth-child(2) .gallery-link:nth-child(2)': { 'aria-label': 'Enlarge Peñón del Sur environment screenshot (opens in a new tab)' },
+      '.project:nth-child(2) .gallery-link:nth-child(3)': { 'aria-label': 'Enlarge Peñón del Sur shop screenshot (opens in a new tab)' },
+      '.project:nth-child(4) .project-visual': { 'aria-label': 'Visual composition of Pompeii The Last Tavern: tavern and eruption' },
+      '.case-sheet': { 'aria-label': 'Technical summary of the Nada de Pensar build' },
+      '.project:nth-child(1) img:nth-of-type(1)': { alt: 'Nada de Pensar: game in progress with answer selection' },
+      '.project:nth-child(1) img:nth-of-type(2)': { alt: 'Nada de Pensar: themed deck selection screen' },
+      '.project:nth-child(1) img:nth-of-type(3)': { alt: 'Nada de Pensar: round with cards and unique answers' },
+      '.project:nth-child(2) img:nth-of-type(1)': { alt: 'Peñón del Sur: gameplay with objective, suspicion, inventory and advanced theft HUD' },
+      '.project:nth-child(2) img:nth-of-type(2)': { alt: "Peñón del Sur: character in the game's tourist setting" },
+      '.project:nth-child(2) img:nth-of-type(3)': { alt: 'Peñón del Sur: upgrade shop and progression' },
+      '.project:nth-child(3) picture img': { alt: 'Fauna: 3D game environment screenshot' },
+      '.portrait-frame img': { alt: 'Portrait of Javier López' }
+    };
+    const spanish = new Map();
+    const originalAttributes = new Map();
+    const setLanguage = (language) => {
+      const english = language === 'en';
+      document.documentElement.lang = english ? 'en' : 'es';
+      document.title = english ? 'Javier López — Gameplay Programmer' : 'Javier López — Gameplay Programmer';
+      Object.entries(translations.en).forEach(([selector, value]) => {
+        const nodes = document.querySelectorAll(selector);
+        nodes.forEach((node, index) => {
+          if (Array.isArray(value) && nodes.length === value.length) {
+            if (!spanish.has(node)) spanish.set(node, node.innerHTML);
+            node.innerHTML = english ? value[index] : spanish.get(node);
+            return;
+          }
+          if (Array.isArray(value) && node.children.length === value.length) {
+            Array.from(node.children).forEach((child, childIndex) => {
+              if (!spanish.has(child)) spanish.set(child, child.innerHTML);
+              if (value[childIndex] !== undefined) child.innerHTML = english ? value[childIndex] : spanish.get(child);
+            });
+            return;
+          }
+          if (!spanish.has(node)) spanish.set(node, node.innerHTML);
+          const translated = Array.isArray(value) ? value[index] : value;
+          if (translated !== undefined) node.innerHTML = english ? translated : spanish.get(node);
+        });
+      });
+      Object.entries(attributeTranslations).forEach(([selector, attributes]) => {
+        document.querySelectorAll(selector).forEach((node) => {
+          if (!originalAttributes.has(node)) originalAttributes.set(node, {});
+          Object.entries(attributes).forEach(([attribute, translated]) => {
+            if (!(attribute in originalAttributes.get(node))) originalAttributes.get(node)[attribute] = node.getAttribute(attribute);
+            const original = originalAttributes.get(node)[attribute];
+            if (english || original !== null) node.setAttribute(attribute, english ? translated : original);
+            else node.removeAttribute(attribute);
+          });
+        });
+      });
+      document.querySelectorAll('[data-language]').forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.language === language)));
+      try { localStorage.setItem('portfolio-language', language); } catch (error) {}
+    };
+    document.querySelectorAll('[data-language]').forEach((button) => button.addEventListener('click', () => setLanguage(button.dataset.language)));
+    let preferredLanguage = 'es';
+    try { preferredLanguage = localStorage.getItem('portfolio-language') || 'es'; } catch (error) {}
+    setLanguage(preferredLanguage === 'en' ? 'en' : 'es');
+  </script>
 </body>
 </html>
