@@ -216,7 +216,8 @@
       grid-area: visual;
       position: relative;
       min-width: 0;
-      min-height: 190px;
+      height: clamp(280px, 31vw, 390px);
+      min-height: 0;
       margin-bottom: 1rem;
       overflow: hidden;
       border: 1px solid var(--line-dark);
@@ -236,7 +237,7 @@
     .project-gallery--penon picture:first-child { grid-row: 1 / -1; }
     .project-gallery--penon img { object-fit: contain; }
     .project-carousel { position: relative; z-index: 1; display: grid; grid-template-rows: minmax(0, 1fr) auto; width: 100%; height: 100%; min-height: 0; gap: .6rem; }
-    .carousel-viewport { position: relative; min-width: 0; min-height: 0; overflow: hidden; border: 1px solid rgba(32,39,36,.32); background: #242424; }
+    .carousel-viewport { position: relative; min-width: 0; min-height: 0; aspect-ratio: 16 / 9; overflow: hidden; border: 1px solid rgba(32,39,36,.32); background: #242424; }
     .carousel-track { display: flex; width: 100%; height: 100%; transition: transform .28s ease; }
     .carousel-slide { flex: 0 0 100%; min-width: 0; height: 100%; margin: 0; }
     .carousel-slide[aria-hidden="true"] { visibility: hidden; }
@@ -244,8 +245,13 @@
     .carousel-slide picture,
     .carousel-slide img { display: block; width: 100%; height: 100%; }
     .carousel-slide .gallery-link { cursor: zoom-in; }
-    .carousel-slide img { border: 0; background: #242424; object-fit: contain; }
-    .carousel-slide--cover img { object-fit: cover; }
+    .carousel-slide img { border: 0; background: #242424; object-fit: contain; object-position: center; }
+    .carousel-slide--cover img { object-fit: cover; object-position: center; }
+    .project-visual--ndp .carousel-slide:not(.carousel-slide--cover) img { object-position: center; }
+    .project-visual--penon .carousel-slide img { object-fit: cover; }
+    .project-visual--penon .carousel-slide--cover img { object-fit: contain; }
+    .project-visual--fauna .carousel-slide img,
+    .project-visual--pompeii .carousel-slide img { object-fit: cover; }
     .carousel-controls { display: flex; align-items: center; justify-content: space-between; gap: .7rem; min-height: 1.8rem; }
     .carousel-button, .carousel-dot { border: 1px solid var(--line-dark); background: var(--paper-light); color: var(--red-dark); font-family: var(--mono); font-weight: 700; cursor: pointer; }
     .carousel-button { display: grid; place-items: center; width: 2rem; height: 2rem; padding: 0; font-size: 1rem; line-height: 1; }
@@ -282,7 +288,7 @@
     .project:nth-child(2) { grid-column: span 5; }
     .project:nth-child(3) { grid-column: span 5; }
     .project:nth-child(4) { grid-column: span 7; }
-    .project--featured .project-visual, .project:nth-child(4) .project-visual { min-height: 240px; }
+    .project--featured .project-visual, .project:nth-child(4) .project-visual { height: clamp(280px, 31vw, 390px); }
     .project--featured .project-copy, .project:nth-child(4) .project-copy { max-width: 58ch; }
 
     .about-grid { display: grid; grid-template-columns: minmax(190px, .65fr) minmax(0, 1.35fr); gap: clamp(2rem, 8vw, 8rem); align-items: start; }
@@ -334,6 +340,10 @@
     .site-footer { display: flex; justify-content: space-between; gap: 1rem; padding: 1rem 0 2rem; border-top: 1px solid var(--ink); color: var(--muted); font-family: var(--mono); font-size: .64rem; text-transform: uppercase; }
 
     @media (max-width: 900px) {
+      .header-inner { gap: .75rem; }
+      .site-nav { gap: .75rem; font-size: .62rem; }
+      .header-tools { gap: .35rem; }
+      .language-switch { margin-left: .2rem; }
       .hero { grid-template-columns: 1fr; }
       .hero-index { max-width: 470px; min-height: 260px; }
       .register { grid-template-columns: 1fr; }
@@ -366,7 +376,7 @@
       .work-list { display: block; }
       .project, .project--featured, .project:nth-child(2), .project:nth-child(3), .project:nth-child(4) { display: grid; grid-template-columns: 38px minmax(0, 1fr); grid-template-areas: "no visual" "no title" "no copy" "no meta"; margin-bottom: 1.5rem; }
       .project:hover { transform: none; }
-      .project-visual, .project--featured .project-visual, .project:nth-child(4) .project-visual { min-height: 190px; }
+      .project-visual, .project--featured .project-visual, .project:nth-child(4) .project-visual { height: clamp(250px, 72vw, 340px); min-height: 0; }
       .project-carousel { gap: .45rem; }
       .carousel-status { min-width: 6rem; font-size: .56rem; }
       .carousel-button { width: 1.85rem; height: 1.85rem; }
@@ -470,9 +480,14 @@
             <div class="project-carousel" data-carousel data-carousel-name="Nada de Pensar" aria-label="Galería de Nada de Pensar">
               <div class="carousel-viewport">
                 <div class="carousel-track">
+                  <figure class="carousel-slide carousel-slide--cover">
+                    <a class="gallery-link" href="assets/ndp-cover.png" target="_blank" rel="noopener noreferrer" aria-label="Ampliar portada oficial de Nada de Pensar (se abre en una pestaña nueva)">
+                      <picture><source srcset="assets/ndp-cover.webp" type="image/webp" /><img src="assets/ndp-cover.png" alt="Nada de Pensar: portada oficial del juego" width="1920" height="1080" loading="eager" /></picture>
+                    </a>
+                  </figure>
                   <figure class="carousel-slide">
                     <a class="gallery-link" href="assets/ndp-01-respuesta.png" target="_blank" rel="noopener noreferrer" aria-label="Ampliar captura principal de Nada de Pensar (se abre en una pestaña nueva)">
-                      <picture><source srcset="assets/ndp-01-respuesta.webp" type="image/webp" /><img src="assets/ndp-01-respuesta.png" alt="Nada de Pensar: partida en curso con selección de respuesta" width="347" height="491" loading="eager" /></picture>
+                      <picture><source srcset="assets/ndp-01-respuesta.webp" type="image/webp" /><img src="assets/ndp-01-respuesta.png" alt="Nada de Pensar: partida en curso con selección de respuesta" width="347" height="491" loading="lazy" /></picture>
                     </a>
                   </figure>
                   <figure class="carousel-slide">
@@ -497,26 +512,29 @@
         </article>
         <article class="project">
           <div class="project-no">02</div>
-          <div class="project-visual project-visual--penon" role="group" aria-label="Imágenes de Peñón del Sur: gameplay, entorno y tienda de mejoras">
-            <div class="project-gallery project-gallery--penon">
-              <a class="gallery-link" href="assets/pds-03-gameplay-hud.png" target="_blank" rel="noopener noreferrer" aria-label="Ampliar captura principal del HUD de Peñón del Sur (se abre en una pestaña nueva)">
-                <picture>
-                  <source srcset="assets/pds-03-gameplay-hud.webp" type="image/webp" />
-                  <img src="assets/pds-03-gameplay-hud.png" alt="Peñón del Sur: gameplay con HUD de objetivos, sospecha, inventario y robo avanzado" width="1280" height="720" loading="eager" />
-                </picture>
-              </a>
-              <a class="gallery-link" href="assets/pds-02-entorno.png" target="_blank" rel="noopener noreferrer" aria-label="Ampliar captura del entorno de Peñón del Sur (se abre en una pestaña nueva)">
-                <picture>
-                  <source srcset="assets/pds-02-entorno.webp" type="image/webp" />
-                  <img src="assets/pds-02-entorno.png" alt="Peñón del Sur: personaje en el entorno turístico del juego" width="1280" height="720" loading="lazy" />
-                </picture>
-              </a>
-              <a class="gallery-link" href="assets/pds-01-shop.png" target="_blank" rel="noopener noreferrer" aria-label="Ampliar captura de la tienda de Peñón del Sur (se abre en una pestaña nueva)">
-                <picture>
-                  <source srcset="assets/pds-01-shop.webp" type="image/webp" />
-                  <img src="assets/pds-01-shop.png" alt="Peñón del Sur: tienda de mejoras y progresión" width="1280" height="720" loading="lazy" />
-                </picture>
-              </a>
+          <div class="project-visual project-visual--penon" role="group" aria-label="Carrusel de Peñón del Sur: gameplay, entorno y tienda de mejoras">
+            <div class="project-carousel" data-carousel data-carousel-name="Peñón del Sur" aria-label="Galería de Peñón del Sur">
+              <div class="carousel-viewport">
+                <div class="carousel-track">
+                  <figure class="carousel-slide">
+                    <a class="gallery-link" href="assets/pds-03-gameplay-hud.png" target="_blank" rel="noopener noreferrer" aria-label="Ampliar captura principal del HUD de Peñón del Sur (se abre en una pestaña nueva)">
+                      <picture><source srcset="assets/pds-03-gameplay-hud.webp" type="image/webp" /><img src="assets/pds-03-gameplay-hud.png" alt="Peñón del Sur: gameplay con HUD de objetivos, sospecha, inventario y robo avanzado" width="1280" height="720" loading="eager" /></picture>
+                    </a>
+                  </figure>
+                  <figure class="carousel-slide">
+                    <a class="gallery-link" href="assets/pds-02-entorno.png" target="_blank" rel="noopener noreferrer" aria-label="Ampliar captura del entorno de Peñón del Sur (se abre en una pestaña nueva)">
+                      <picture><source srcset="assets/pds-02-entorno.webp" type="image/webp" /><img src="assets/pds-02-entorno.png" alt="Peñón del Sur: personaje en el entorno turístico del juego" width="1280" height="720" loading="lazy" /></picture>
+                    </a>
+                  </figure>
+                  <figure class="carousel-slide">
+                    <a class="gallery-link" href="assets/pds-01-shop.png" target="_blank" rel="noopener noreferrer" aria-label="Ampliar captura de la tienda de Peñón del Sur (se abre en una pestaña nueva)">
+                      <picture><source srcset="assets/pds-01-shop.webp" type="image/webp" /><img src="assets/pds-01-shop.png" alt="Peñón del Sur: tienda de mejoras y progresión" width="1280" height="720" loading="lazy" /></picture>
+                    </a>
+                  </figure>
+                </div>
+              </div>
+              <div class="carousel-controls"><button class="carousel-button" type="button" data-carousel-prev aria-label="Imagen anterior">←</button><div class="carousel-status" data-carousel-status aria-live="polite"></div><button class="carousel-button" type="button" data-carousel-next aria-label="Imagen siguiente">→</button></div>
+              <div class="carousel-dots" data-carousel-dots></div>
             </div>
           </div>
           <div class="project-title"><h3>Peñón del Sur</h3><span class="project-state">Proyecto actual · en desarrollo</span></div>
@@ -746,25 +764,27 @@
       '.register': { 'aria-label': 'Work areas' },
       '.project:nth-child(1) .project-visual': { 'aria-label': 'Nada de Pensar carousel: game, themed decks and unique answers' },
       '.project:nth-child(1) .project-carousel': { 'aria-label': 'Nada de Pensar gallery' },
-      '.project:nth-child(1) .carousel-slide:nth-child(1) .gallery-link': { 'aria-label': 'Enlarge main Nada de Pensar screenshot (opens in a new tab)' },
-      '.project:nth-child(1) .carousel-slide:nth-child(2) .gallery-link': { 'aria-label': 'Enlarge Nada de Pensar themed decks screenshot (opens in a new tab)' },
-      '.project:nth-child(1) .carousel-slide:nth-child(3) .gallery-link': { 'aria-label': 'Enlarge Nada de Pensar unique answers screenshot (opens in a new tab)' },
-      '.project:nth-child(2) .project-visual': { 'aria-label': 'Peñón del Sur images: gameplay, environment and upgrade shop' },
-      '.project:nth-child(2) .project-gallery--penon .gallery-link:nth-child(1)': { 'aria-label': 'Enlarge Peñón del Sur HUD screenshot (opens in a new tab)' },
-      '.project:nth-child(2) .project-gallery--penon .gallery-link:nth-child(2)': { 'aria-label': 'Enlarge Peñón del Sur environment screenshot (opens in a new tab)' },
-      '.project:nth-child(2) .project-gallery--penon .gallery-link:nth-child(3)': { 'aria-label': 'Enlarge Peñón del Sur shop screenshot (opens in a new tab)' },
+      '.project:nth-child(1) .project-visual': { 'aria-label': 'Nada de Pensar carousel: cover, game, themed decks and unique answers' },
+      '.project:nth-child(1) .project-carousel': { 'aria-label': 'Nada de Pensar gallery' },
+      '.project:nth-child(1) .carousel-slide:nth-child(1) .gallery-link': { 'aria-label': 'Enlarge official Nada de Pensar cover (opens in a new tab)' },
+      '.project:nth-child(1) .carousel-slide:nth-child(2) .gallery-link': { 'aria-label': 'Enlarge main Nada de Pensar screenshot (opens in a new tab)' },
+      '.project:nth-child(1) .carousel-slide:nth-child(3) .gallery-link': { 'aria-label': 'Enlarge Nada de Pensar themed decks screenshot (opens in a new tab)' },
+      '.project:nth-child(1) .carousel-slide:nth-child(4) .gallery-link': { 'aria-label': 'Enlarge Nada de Pensar unique answers screenshot (opens in a new tab)' },
+      '.project:nth-child(2) .project-visual': { 'aria-label': 'Peñón del Sur carousel: gameplay, environment and upgrade shop' },
+      '.project:nth-child(2) .project-carousel': { 'aria-label': 'Peñón del Sur gallery' },
       '.project:nth-child(3) .project-carousel': { 'aria-label': 'Fauna gallery' },
       '.project:nth-child(4) .project-visual': { 'aria-label': 'Pompeii The Last Tavern carousel: cover and game captures' },
       '.project:nth-child(4) .project-carousel': { 'aria-label': 'Pompeii The Last Tavern gallery' },
-      '.project:nth-child(1) [data-carousel-prev], .project:nth-child(3) [data-carousel-prev], .project:nth-child(4) [data-carousel-prev]': { 'aria-label': 'Previous image' },
-      '.project:nth-child(1) [data-carousel-next], .project:nth-child(3) [data-carousel-next], .project:nth-child(4) [data-carousel-next]': { 'aria-label': 'Next image' },
+      '.project:nth-child(1) [data-carousel-prev], .project:nth-child(2) [data-carousel-prev], .project:nth-child(3) [data-carousel-prev], .project:nth-child(4) [data-carousel-prev]': { 'aria-label': 'Previous image' },
+      '.project:nth-child(1) [data-carousel-next], .project:nth-child(2) [data-carousel-next], .project:nth-child(3) [data-carousel-next], .project:nth-child(4) [data-carousel-next]': { 'aria-label': 'Next image' },
       '.case-sheet': { 'aria-label': 'Technical summary of the Nada de Pensar build' },
-      '.project:nth-child(1) img:nth-of-type(1)': { alt: 'Nada de Pensar: game in progress with answer selection' },
-      '.project:nth-child(1) img:nth-of-type(2)': { alt: 'Nada de Pensar: themed deck selection screen' },
-      '.project:nth-child(1) img:nth-of-type(3)': { alt: 'Nada de Pensar: round with cards and unique answers' },
-      '.project:nth-child(2) img:nth-of-type(1)': { alt: 'Peñón del Sur: gameplay with objective, suspicion, inventory and advanced theft HUD' },
-      '.project:nth-child(2) img:nth-of-type(2)': { alt: "Peñón del Sur: character in the game's tourist setting" },
-      '.project:nth-child(2) img:nth-of-type(3)': { alt: 'Peñón del Sur: upgrade shop and progression' },
+      '.project:nth-child(1) .carousel-slide:nth-child(1) img': { alt: 'Nada de Pensar: official game cover' },
+      '.project:nth-child(1) .carousel-slide:nth-child(2) img': { alt: 'Nada de Pensar: game in progress with answer selection' },
+      '.project:nth-child(1) .carousel-slide:nth-child(3) img': { alt: 'Nada de Pensar: themed deck selection screen' },
+      '.project:nth-child(1) .carousel-slide:nth-child(4) img': { alt: 'Nada de Pensar: round with cards and unique answers' },
+      '.project:nth-child(2) .carousel-slide:nth-child(1) img': { alt: 'Peñón del Sur: gameplay with objective, suspicion, inventory and advanced theft HUD' },
+      '.project:nth-child(2) .carousel-slide:nth-child(2) img': { alt: "Peñón del Sur: character in the game's tourist setting" },
+      '.project:nth-child(2) .carousel-slide:nth-child(3) img': { alt: 'Peñón del Sur: upgrade shop and progression' },
       '.project:nth-child(3) .carousel-slide:nth-child(1) img': { alt: 'Fauna: official game cover' },
       '.project:nth-child(3) .carousel-slide:nth-child(2) img': { alt: 'Fauna: 3D setting with the robot and game fauna' },
       '.project:nth-child(3) .carousel-slide:nth-child(3) img': { alt: 'Fauna: exploration of a 3D environment' },
